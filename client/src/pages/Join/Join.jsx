@@ -1,6 +1,9 @@
-import { useEffect, useState } from 'react';
-import { getUser, postUser } from './Login/LoginAPI';
+import { useState } from 'react';
+import { postUser } from './JoinAPI';
+import * as S from './Join.styles';
+
 import { useNavigate } from 'react-router-dom';
+import { PATH } from '../../global/constants';
 
 function Join() {
   // 데이터 변수
@@ -39,7 +42,7 @@ function Join() {
       alert('이미 존재하는 아이디 입니다. 다른 아이디를 사용해주세요.');
     } else {
       alert('회원가입 성공^ㅁ^');
-      navigate('/auth/login');
+      navigate(PATH.login);
     }
   };
 
@@ -78,72 +81,46 @@ function Join() {
     }
   };
 
-  // 이메일 중복 확인
-  // const checkEmailValid
-
   return (
-    <div className='body__div--login-content'>
-      <h3 className='body__h3--login-logo'>SINBA_D</h3>
-      <form>
-        {/* 이메일 작성 */}
-        <label htmlFor='email' className='form__label--text-hidden'>
-          이메일
-        </label>
+    <S.Container>
+      <h3>SINBA_D</h3>
+      <S.JoinForm>
         <input
           type='email'
-          className='form__input--signup-id'
           placeholder='이메일 형식으로 입력해주세요.'
           value={userEmail}
           onChange={(e) => setUserEmail(e.target.value)}
           required
         />
-        <br />
-        {/* 비밀번호 작성 */}
-        <label htmlFor='password' className='form__label--text-hidden'>
-          비밀번호
-        </label>
         <input
           type='password'
-          className='form__input--signup-password'
           placeholder='비밀번호는 영문자+숫자+특수문자 포함 8자 이상 입력해주세요.'
           value={userFirstPassword}
           onChange={(e) => setUserFirstPassword(e.target.value)}
           required
         />
-        <br />
-        {/* 비밀번호 재입력 */}
-        <label htmlFor='confirm-password' className='form__label--text-hidden'>
-          비밀번호
-        </label>
         <input
           type='password'
-          className='form__input--signup-confirm-password'
           placeholder='비밀번호를 다시 입력해주세요.'
           onChange={(e) => setUserLastPassword(e.target.value)}
           required
         />
-        <br />
-        {/* 이름 작성 */}
-        <label htmlFor='name' className='form__label--text-hidden'>
-          이름
-        </label>
         <input
           type='text'
-          className='form__input--signup-name'
           placeholder='이름을 입력해주세요.'
           value={userName}
           onChange={(e) => setUserName(e.target.value)}
           required
         />
-        <br />
-        <input
+
+        <S.SignUpButton
           type='button'
           className='form__input--signup-completed-button'
           value='가입하기'
           onClick={joinButtonClick}
         />
-      </form>
-    </div>
+      </S.JoinForm>
+    </S.Container>
   );
 }
 

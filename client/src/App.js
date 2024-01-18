@@ -12,7 +12,7 @@ import PurchaseCompleted from './pages/PurchaseCompleted';
 
 // 로그인, 회원가입
 import Login from './pages/Login/Login';
-import Join from './pages/Join';
+import Join from './pages/Join/Join';
 
 // 관리자 페이지
 import Category from './pages/Category';
