@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom';
 
 import * as S from './Login.styles';
 import { PATH } from '../../global/constants';
-import { getUser } from './LoginAPI';
+import { getUser } from './LoginAPI';
 
 function Login() {
   const navigate = useNavigate();
