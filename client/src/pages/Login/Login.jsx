@@ -3,6 +3,7 @@ import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 import * as S from './Login.styles';
+import { PATH } from '../../global/constants';
 import { getUser } from './authAPI';
 
 function Login() {
@@ -49,8 +50,7 @@ function Login() {
   return (
     <S.Container>
       <h3>SINBA_D</h3>
-
-      <form>
+      <S.LoginForm>
         <input
           type='email'
           placeholder='이메일'
@@ -66,10 +66,10 @@ function Login() {
 
         <S.LoginButton type='button' value='로그인' onClick={signIn} />
 
-        <Link to='/auth/join'>
+        <Link to={PATH.join}>
           <S.SignUpButton>회원가입</S.SignUpButton>
         </Link>
-      </form>
+      </S.LoginForm>
     </S.Container>
   );
 }

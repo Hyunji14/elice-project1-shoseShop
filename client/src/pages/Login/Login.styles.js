@@ -3,7 +3,8 @@ import styled from 'styled-components';
 export const Container = styled.div`
   width: 100%;
   height: 600px;
-  text-align: center;
+  display: flex;
+  flex-direction: column;
   margin-top: 180px;
 
   h3 {
@@ -12,6 +13,12 @@ export const Container = styled.div`
     text-align: center;
     margin-bottom: 20px;
   }
+`;
+
+export const LoginForm = styled.form`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 
   input {
     width: 400px;
@@ -28,7 +35,7 @@ export const LoginButton = styled.input`
   border-radius: 10px;
   color: var(--white-color);
   background: var(--red-color);
-  margin: 50px 0 10px 0;
+  margin: 30px 0 10px 0;
 
   &:hover {
     opacity: 0.7;
