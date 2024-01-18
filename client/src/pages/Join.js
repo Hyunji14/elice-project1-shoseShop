@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { getUser, postUser } from './Login/authAPI';
+import { getUser, postUser } from './Login/LoginAPI';
 import { useNavigate } from 'react-router-dom';
 
 function Join() {
