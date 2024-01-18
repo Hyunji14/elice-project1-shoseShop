@@ -11,7 +11,7 @@ import Address from './pages/Adress';
 import PurchaseCompleted from './pages/PurchaseCompleted';
 
 // 로그인, 회원가입
-import Login from './pages/Login';
+import Login from './pages/Login/Login';
 import Join from './pages/Join';
 
 // 관리자 페이지
