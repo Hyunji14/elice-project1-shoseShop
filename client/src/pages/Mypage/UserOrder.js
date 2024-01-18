@@ -1,9 +1,13 @@
 import { useEffect, useState } from 'react';
-import { getUserOrderList, deleteOrder, getImage } from '../api/userOrderAPI';
-import { getCookie } from './../utils/cookieUtils';
+import {
+  getUserOrderList,
+  deleteOrder,
+  getImage,
+} from '../../api/userOrderAPI';
+import { getCookie } from '../../utils/cookieUtils';
 import { Link } from 'react-router-dom';
 
-import '../css/userOrderCSS.css';
+import '../../css/userOrderCSS.css';
 
 function UserOrder() {
   const [userOrderList, setUserOrderList] = useState([]);

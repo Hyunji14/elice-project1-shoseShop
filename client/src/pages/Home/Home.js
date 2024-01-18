@@ -1,10 +1,10 @@
 import { useState, useEffect, useCallback, useRef } from 'react';
 import { Link, useLocation, useParams } from 'react-router-dom';
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
-import visualImage1 from '../image/visualImage1.png';
-import { getBrands, getProducts } from '../api/productsAPI';
-import Products from '../components/Products';
-import trendingimage from '../image/trendingimage.png';
+import visualImage1 from '../../image/visualImage1.png';
+import { getBrands, getProducts } from '../../api/productsAPI';
+import Products from '../../components/Products';
+import trendingimage from '../../image/trendingimage.png';
 
 function Home() {
   let slice = 0;

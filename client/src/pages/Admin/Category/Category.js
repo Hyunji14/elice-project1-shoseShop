@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import ChildCategory from '../components/ChildCategory';
+import ChildCategory from '../../../components/ChildCategory';
 import {
   getCategory,
   getBigCategory,
@@ -8,7 +8,7 @@ import {
   deleteCategory,
   updateCategory,
   getCategoryById,
-} from '../api/categoryAPI';
+} from '../../../api/categoryAPI';
 
 function Category() {
   const navigate = useNavigate();

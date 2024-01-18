@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
-import { getCookie, removeCookie } from './../utils/cookieUtils';
+import { getCookie, removeCookie } from '../../utils/cookieUtils';
 import { useNavigate } from 'react-router-dom';
-import { getUser, updateUserInfo, withDrawUser } from '../api/userInfoAPI';
+import { getUser, updateUserInfo, withDrawUser } from '../../api/userInfoAPI';
 
 function Userinfo() {
   const navigate = useNavigate();

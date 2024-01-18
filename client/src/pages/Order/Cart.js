@@ -1,10 +1,10 @@
-import CartWrapper from '../components/cart/CartWrapper';
+import CartWrapper from '../../components/cart/CartWrapper';
 import React, { useState, useEffect } from 'react';
-import SelectWrapper from '../components/cart/SelectWrapper';
+import SelectWrapper from '../../components/cart/SelectWrapper';
 import { useNavigate } from 'react-router-dom';
 
-import { getCookie } from '../utils/cookieUtils';
-import { newOrder } from '../api/cartAPI';
+import { getCookie } from '../../utils/cookieUtils';
+import { newOrder } from '../../api/cartAPI';
 
 const Cart = () => {
   const navigate = useNavigate();

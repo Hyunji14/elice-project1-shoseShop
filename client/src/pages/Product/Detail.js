@@ -2,7 +2,7 @@ import { useNavigate } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 import { useParams } from 'react-router-dom';
-import baseProductImgage from '../image/base_product_image.png';
+import baseProductImgage from '../../image/base_product_image.png';
 
 const Detail = () => {
   const navigate = useNavigate();

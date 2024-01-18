@@ -1,9 +1,13 @@
 import { useState, useEffect, useCallback, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { useNavigate, useLocation } from 'react-router-dom';
-import { getProducts, getBrands, deleteProduct } from '../api/productsAPI';
-import ManageProduct from '../components/ManageProduct';
-import Pagination from '../components/Pagination';
+import {
+  getProducts,
+  getBrands,
+  deleteProduct,
+} from '../../../api/productsAPI';
+import ManageProduct from '../../../components/ManageProduct';
+import Pagination from '../../../components/Pagination';
 
 const ManageProducts = () => {
   const navigate = useNavigate();

@@ -3,27 +3,27 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Header from './components/common/Header';
 import Footer from './components/common/Footer';
 
-import Home from './pages/Home';
+import Home from './pages/Home/Home';
 import ProductList from './components/ProductList';
-import Detail from './pages/Detail';
-import Cart from './pages/Cart';
-import Address from './pages/Adress';
-import PurchaseCompleted from './pages/PurchaseCompleted';
+import Detail from './pages/Product/Detail';
+import Cart from './pages/Order/Cart';
+import Address from './pages/Mypage/Adress';
+import PurchaseCompleted from './pages/Order/PurchaseCompleted';
 
 // 로그인, 회원가입
 import Login from './pages/Login/Login';
 import Join from './pages/Join/Join';
 
 // 관리자 페이지
-import Category from './pages/Category';
-import ManageProducts from './pages/ManageProducts';
-import ManageProductNew from './pages/ManageProductNew';
-import ManageProductEdit from './pages/ManageProductEdit';
-import ManageOrder from './pages/ManageOrder';
+import Category from './pages/Admin/Category/Category';
+import ManageProducts from './pages/Admin/Product/ManageProducts';
+import ManageProductNew from './pages/Admin/Product/ManageProductNew';
+import ManageProductEdit from './pages/Admin/Product/ManageProductEdit';
+import ManageOrder from './pages/Admin/Order/ManageOrder';
 
 //사용자 마이페이지
-import UserOrder from './pages/UserOrder';
-import Userinfo from './pages/Userinfo';
+import UserOrder from './pages/Mypage/UserOrder';
+import Userinfo from './pages/Mypage/Userinfo';
 import './css/app.css';
 
 function App() {
