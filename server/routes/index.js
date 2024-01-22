@@ -12,6 +12,7 @@ const orderRouter = require('./api/orderAPI');
 const imageRouter = require('./api/image');
 
 logger.info('API 라우터 올라옴');
+console.log(process.env.APP_PORT);
 
 const apiRouter = router
   .use('/products', productsRouter)

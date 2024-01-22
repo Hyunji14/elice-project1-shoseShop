@@ -1,5 +1,8 @@
 import { useState, useEffect, memo, useCallback } from 'react';
-import { getChildCategory, getBigCategory } from '../api/categoryAPI';
+import {
+  getChildCategory,
+  getBigCategory,
+} from '../pages/Admin/Category/CategoryAPI';
 import Checkbox from './CheckBox';
 
 const CategoryBar = ({
