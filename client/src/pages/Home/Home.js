@@ -1,6 +1,7 @@
-import { useState, useEffect, useCallback, useRef } from 'react';
-import { Link, useLocation, useParams } from 'react-router-dom';
+import { useState, useEffect } from 'react';
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
+
+import * as S from './Home.styles';
 import visualImage1 from '../../image/visualImage1.png';
 import { getBrands, getProducts } from '../../api/productsAPI';
 import Products from '../../components/Products';
@@ -25,26 +26,22 @@ function Home() {
   }, []);
 
   return (
-    // 메인 비주얼 영역
-    <div className='body__div--index-content'>
-      <ul className='div__div--visual'>
+    <S.Container>
+      <ul>
         {/* 이미지 슬라이더 */}
         <li>
-          <img
-            src={visualImage1}
-            alt='비주얼 이미지1'
-            className='li__img--visualimg1'
-          />
+          <img src={visualImage1} alt='비주얼 이미지1' />
         </li>
-        <div className='div__div--visual-button'>
+        <div>
           <button>이전</button>
           <button>다음</button>
         </div>
       </ul>
-      <div className='body__div--index-content-wrap'>
+
+      <S.ContextContainer>
         {/* 베스트 상품 영역 */}
-        <div className='div__div--best'>
-          <h2 className='div__h2--title'>BEST</h2>
+        <S.BestItemsDiv>
+          <h2>BEST</h2>
           <Products
             products={products.slice(0, 3)}
             brands={brands}
@@ -58,23 +55,21 @@ function Home() {
             itemClass='home-product-item'
             productStyle='home-product'
           />
-        </div>
+        </S.BestItemsDiv>
+
         {/* Trending */}
-        <div className='div__div--trending'>
-          <img
-            src={trendingimage}
-            alt='트렌드이미지'
-            className='li__img--trendimage'
-          />
-          <p className='div__h2--trending-text1'>Own the Floor</p>
-          <p className='div__h2--trending-text2'>
+        <S.TrendItemsDiv>
+          <img src={trendingimage} alt='트렌드이미지' />
+          <S.TrendItemsP>Own the Floor</S.TrendItemsP>
+          <S.TrendItemsTitleP>
             스튜디오 밖에서도 빛나는 스니커즈
-          </p>
-          <button className='div__h2--trending-buy-button'>구매하기</button>
-        </div>
-        <div className='div__div--new'>
+          </S.TrendItemsTitleP>
+          <button>구매하기</button>
+        </S.TrendItemsDiv>
+
+        <S.NewItemsDiv>
           {/* 신제품 영역 */}
-          <h2 className='div__h2--new-title'>NEW</h2>
+          <h2>NEW</h2>
           <Products
             products={products.slice(6, 9)}
             brands={brands}
@@ -87,9 +82,9 @@ function Home() {
             brands={brands}
             productStyle='home-product'
           />
-        </div>
-      </div>
-    </div>
+        </S.NewItemsDiv>
+      </S.ContextContainer>
+    </S.Container>
   );
 }
 

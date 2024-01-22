@@ -3,16 +3,14 @@
 import axios from 'axios';
 
 // // get response:
-const API_BASE_URL = '';
+const API_BASE_URL = 'http://localhost:5002';
 export const getProducts = async (categories, page) => {
   try {
     let query = { params: { page: page || 1 } };
-
     if (categories.length) {
       query['params']['category_id'] = categories;
     }
     const response = await axios.get(`${API_BASE_URL}/api/products`, query);
-
     return response.data;
   } catch (err) {
     throw new Error(err);

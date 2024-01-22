@@ -206,30 +206,6 @@ table {
 }
 
 /* index */
-.body__div--index-content {
-  width: 100%;
-  margin-top: 70px;
-}
-
-.div__div--visual {
-  width: 100%;
-  height: 600px;
-  background: var(--black-color);
-  overflow: hidden;
-}
-
-.li__img--visualimg1 {
-  width: 100%;
-}
-
-.div__div--visual-button {
-  position: relative;
-  display: flex;
-  justify-content: space-between;
-  height: 600px;
-  z-index: 9;
-}
-
 .li__img--slide1 {
   width: 100%;
   height: 600px;
@@ -240,23 +216,6 @@ table {
   font-size: 5rem;
   opacity: 0.5;
 }
-
-.body__div--index-content-wrap {
-  width: 90%;
-  margin: 0 auto;
-}
-
-.div__div--best {
-  width: 100%;
-  height: 1000px;
-}
-
-.div__h2--title {
-  font-size: 30px;
-  margin: 100px 0 50px;
-  text-align: center;
-}
-
 .div__div--best-product-img {
   width: 280px;
   height: 280px;
@@ -265,21 +224,6 @@ table {
 }
 
 .div__div--best-list {
-  display: flex;
-  justify-content: space-between;
-}
-
-.div__div--trending {
-  width: 100%;
-  height: 1000px;
-}
-
-.div__h2--trending-title {
-  margin: 80px 0 50px;
-  font-size: 30px;
-}
-
-.div__div--trend-wrap {
   display: flex;
   justify-content: space-between;
 }
@@ -295,38 +239,6 @@ table {
 .div__div--trend-img-1:hover,
 .div__div--trend-img-2:hover {
   opacity: 0.5;
-}
-
-.div__div--trending {
-  width: 100%;
-  height: 1000px;
-  text-align: center;
-}
-
-.div__h2--trending-text1 {
-  margin-top: 60px;
-}
-
-.div__h2--trending-text2 {
-  font-weight: 800;
-  font-size: 30px;
-  margin-top: 10px;
-  margin-bottom: 70px;
-}
-
-.div__h2--trending-buy-button {
-  display: block;
-  padding: 15px 40px;
-  border: 1px solid;
-  color: var(--white-color);
-  background: var(--black-color);
-  border-radius: 5px;
-  margin: 0 auto;
-}
-
-.div__h2--trending-buy-button:hover {
-  color: var(--black-color);
-  background: var(--white-color);
 }
 
 .li__img--trendimage {
