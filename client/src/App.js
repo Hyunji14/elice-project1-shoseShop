@@ -1,7 +1,7 @@
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 
-import Header from './components/common/Header';
-import Footer from './components/common/Footer';
+import Header from './components/Header/Header';
+import Footer from './components/Footer/Footer';
 
 import Home from './pages/Home/Home';
 import ProductList from './components/ProductList';
@@ -31,27 +31,27 @@ function App() {
     <Router>
       <Header />
       <Routes>
-        <Route path='/' element={<Home />}></Route>
-        <Route path='/plist/all' element={<ProductList />}></Route>
-        <Route path='/detail/:id' element={<Detail />} />
-        <Route path='/cart' element={<Cart />} />
-        <Route path='/address/:id' element={<Address />} />
-        <Route path='/PurchaseCompleted' element={<PurchaseCompleted />} />
-        <Route path='/auth/login' element={<Login />}></Route>
-        <Route path='/auth/join' element={<Join />}></Route>
-        <Route path='/userinfo' element={<Userinfo />}></Route>
+        <Route path="/" element={<Home />}></Route>
+        <Route path="/plist/all" element={<ProductList />}></Route>
+        <Route path="/detail/:id" element={<Detail />} />
+        <Route path="/cart" element={<Cart />} />
+        <Route path="/address/:id" element={<Address />} />
+        <Route path="/PurchaseCompleted" element={<PurchaseCompleted />} />
+        <Route path="/auth/login" element={<Login />}></Route>
+        <Route path="/auth/join" element={<Join />}></Route>
+        <Route path="/userinfo" element={<Userinfo />}></Route>
         {/* 관리자페이지 */}
-        <Route path='/category' element={<Category />}></Route>
-        <Route path='/manageproducts' element={<ManageProducts />}></Route>
-        <Route path='/productnew' element={<ManageProductNew />}></Route>
-        <Route path='/plist' element={<ProductList />}></Route>
+        <Route path="/category" element={<Category />}></Route>
+        <Route path="/manageproducts" element={<ManageProducts />}></Route>
+        <Route path="/productnew" element={<ManageProductNew />}></Route>
+        <Route path="/plist" element={<ProductList />}></Route>
         <Route
-          path='/productedit/:product_id'
+          path="/productedit/:product_id"
           element={<ManageProductEdit />}
         ></Route>
-        <Route path='/plist/:listType' element={<ProductList />}></Route>
-        <Route path='/user/order' element={<UserOrder />}></Route>
-        <Route path='/user/:id' element={<Userinfo />}></Route>
+        <Route path="/plist/:listType" element={<ProductList />}></Route>
+        <Route path="/user/order" element={<UserOrder />}></Route>
+        <Route path="/user/:id" element={<Userinfo />}></Route>
         {/* <Route path='/plist/woman' element={<ProductList />}></Route>
         <Route path='/plist/man' element={<ProductList />}></Route> */}
       </Routes>

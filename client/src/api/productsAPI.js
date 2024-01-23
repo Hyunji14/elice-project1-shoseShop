@@ -3,7 +3,7 @@
 import axios from 'axios';
 
 // // get response:
-const API_BASE_URL = 'http://localhost:5002';
+const API_BASE_URL = 'http://localhost:3000';
 export const getProducts = async (categories, page) => {
   try {
     let query = { params: { page: page || 1 } };

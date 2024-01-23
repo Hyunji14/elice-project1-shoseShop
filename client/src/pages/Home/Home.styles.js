@@ -2,12 +2,9 @@ import styled from 'styled-components';
 
 export const Container = styled.div`
   width: 100%;
-  margin-top: 70px;
 
   ul {
     width: 100%;
-    height: 600px;
-    background: var(--black-color);
     overflow: hidden;
 
     & li img {
@@ -18,7 +15,6 @@ export const Container = styled.div`
       position: relative;
       display: flex;
       justify-content: space-between;
-      height: 600px;
       z-index: 9;
     }
   }

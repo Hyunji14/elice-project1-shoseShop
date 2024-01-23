@@ -220,7 +220,6 @@ table {
   width: 280px;
   height: 280px;
   border: 1px solid;
-  background: var(--black-color);
 }
 
 .div__div--best-list {
@@ -233,7 +232,6 @@ table {
   width: 600px;
   height: 600px;
   border: 1px solid;
-  background: var(--black-color);
 }
 
 .div__div--trend-img-1:hover,
