@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 export const Container = styled.header`
   width: 100%;
@@ -6,6 +6,7 @@ export const Container = styled.header`
   background: ${(props) => props.theme.color.white};
   position: sticky;
   top: 0;
+  z-index: 10;
 `;
 
 export const Wrap = styled.div`
