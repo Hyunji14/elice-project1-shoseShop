@@ -1,15 +1,15 @@
-import { useState, useEffect, useCallback, useRef } from "react";
-import { Link, useLocation, useParams } from "react-router-dom";
-import "react-responsive-carousel/lib/styles/carousel.min.css";
-import visualImage1 from "../image/visualImage1.jpg";
-import { getBrands, getProducts } from "../api/productsAPI";
-import Products from "../components/Products";
-import trendingimage from "../image/trendingimage.png";
+import { useState, useEffect, useCallback, useRef } from 'react';
+import { Link, useLocation, useParams } from 'react-router-dom';
+import 'react-responsive-carousel/lib/styles/carousel.min.css';
+import visualImage1 from '../image/visualImage1.jpg';
+import { getBrands, getProducts } from '../api/productsAPI';
+import Products from '../components/Products';
+import trendingimage from '../image/trendingimage.png';
 
-import Button from "../components/Button/Button";
-import Table from "../components/Table/Table";
-import Input from "../components/Input/Input";
-import AdminHeader from "../components/Admin/AdminHeader/AdminHeader";
+import Button from '../components/Button/Button';
+import Table from '../components/Table/Table';
+import Input from '../components/Input/Input';
+import AdminHeader from '../components/Admin/AdminHeader/AdminHeader';
 
 function Home() {
   let slice = 0;
@@ -17,7 +17,7 @@ function Home() {
   const [brands, setBrands] = useState([]);
 
   const getProductList = async () => {
-    const data = await getProducts("", 1);
+    const data = await getProducts('', 1);
     const products = data.products;
 
     const brandList = await getBrands();
@@ -29,12 +29,12 @@ function Home() {
     getProductList();
   }, []);
 
-  const tableHeaderData = ["제품명", "가격", "성별", "모델명"];
+  const tableHeaderData = ['제품명', '가격', '성별', '모델명'];
 
   const tableData = [
-    ["제품명", "가격", "성별", "모델명"],
-    ["제품명", "가격", "성별", "모델명"],
-    ["제품명", "가격", "성별", "모델명"],
+    ['제품명', '가격', '성별', '모델명'],
+    ['제품명', '가격', '성별', '모델명'],
+    ['제품명', '가격', '성별', '모델명'],
   ];
 
   return (

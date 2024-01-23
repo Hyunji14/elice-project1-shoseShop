@@ -1,12 +1,12 @@
-import { useState, useEffect } from "react";
-import "react-responsive-carousel/lib/styles/carousel.min.css";
+import { useState, useEffect } from 'react';
+import 'react-responsive-carousel/lib/styles/carousel.min.css';
 
-import * as S from "./Home.styles";
-import visualImage1 from "../../image/visualImage1.jpg";
-import { getBrands, getProducts } from "../../api/productsAPI";
-import Products from "../../components/Products";
-import trendingimage from "../../image/trendingimage.png";
-import Top from "../../components/Top/Top";
+import * as S from './Home.styles';
+import visualImage1 from '../../image/visualImage1.jpg';
+import { getBrands, getProducts } from '../../api/productsAPI';
+import Products from '../../components/Products';
+import trendingimage from '../../image/trendingimage.png';
+import Top from '../../components/Top/Top';
 
 function Home() {
   let slice = 0;
@@ -14,7 +14,7 @@ function Home() {
   const [brands, setBrands] = useState([]);
 
   const getProductList = async () => {
-    const data = await getProducts("", 1);
+    const data = await getProducts('', 1);
     const products = data.products;
 
     const brandList = await getBrands();

@@ -1,4 +1,4 @@
-import { InputStyle } from "./Input.styled";
+import { InputStyle } from './Input.styles';
 
 export default function Input({ size, placeholder }) {
   return <InputStyle size={size} placeholder={placeholder} />;

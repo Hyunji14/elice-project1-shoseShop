@@ -1,19 +1,19 @@
-import { useState, useEffect } from "react";
-import { Link, useNavigate } from "react-router-dom";
-import { getBigCategory } from "../../pages/Admin/Category/CategoryAPI";
-import { logout } from "../../pages/Login/LoginAPI";
-import { isTokenEixst, removeCookie, getCookie } from "../../utils/cookieUtils";
+import { useState, useEffect } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
+import { getBigCategory } from '../../pages/Admin/Category/CategoryAPI';
+import { logout } from '../../pages/Login/LoginAPI';
+import { isTokenEixst, removeCookie, getCookie } from '../../utils/cookieUtils';
 
 import {
   IoSearchOutline,
   IoBagOutline,
   IoPersonOutline,
-} from "react-icons/io5";
+} from 'react-icons/io5';
 
-import logoImage from "../../image/logo.png";
-import * as S from "./Header.styled";
+import logoImage from '../../image/logo.png';
+import * as S from './Header.styles';
 
-const menu = ["SHOES", "MAN", "WOMAN"];
+const menu = ['SHOES', 'MAN', 'WOMAN'];
 
 export default function Header() {
   const navigate = useNavigate();
@@ -24,13 +24,13 @@ export default function Header() {
 
   useEffect(() => {
     refresh();
-    if (getCookie("user_id") === "admin") {
+    if (getCookie('user_id') === 'admin') {
       checkAdmin(true);
     }
   }, []);
 
   const handlingLogin = () => {
-    setLoginStatus(isTokenEixst("token"));
+    setLoginStatus(isTokenEixst('token'));
   };
 
   const refresh = () => {
@@ -41,15 +41,15 @@ export default function Header() {
   };
 
   const clickLogoutBtn = () => {
-    if (window.confirm("로그아웃을 하시겠습니까?")) {
+    if (window.confirm('로그아웃을 하시겠습니까?')) {
       logout();
-      alert("로그아웃 되었습니다.");
+      alert('로그아웃 되었습니다.');
 
       setLoginStatus(false);
-      removeCookie("user_id");
-      navigate("/");
+      removeCookie('user_id');
+      navigate('/');
     } else {
-      alert("취소되었습니다.");
+      alert('취소되었습니다.');
     }
   };
 

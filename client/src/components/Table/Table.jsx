@@ -1,4 +1,4 @@
-import * as S from "./Table.styled";
+import * as S from './Table.styles';
 
 export default function Table({ title, data }) {
   return (

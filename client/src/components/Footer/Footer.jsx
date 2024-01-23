@@ -1,10 +1,10 @@
-import * as S from "./Footer.styled";
+import * as S from './Footer.styles';
 
 const menu = [
-  "이용약관",
-  "개인정보처리방침",
-  "위치기반 서비스약관",
-  "영상정보처리기기 운영방침",
+  '이용약관',
+  '개인정보처리방침',
+  '위치기반 서비스약관',
+  '영상정보처리기기 운영방침',
 ];
 
 export default function Footer() {

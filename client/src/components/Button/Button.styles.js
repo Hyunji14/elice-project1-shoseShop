@@ -1,25 +1,25 @@
-import styled, { css } from "styled-components";
+import styled, { css } from 'styled-components';
 
 const sizes = {
   large: {
-    width: "260px",
-    height: "50px",
+    width: '260px',
+    height: '50px',
   },
   thinMedium: {
-    width: "180px",
-    height: "40px",
+    width: '180px',
+    height: '40px',
   },
   medium: {
-    width: "130px",
-    height: "44px",
+    width: '130px',
+    height: '44px',
   },
   small: {
-    width: "65px",
-    height: "36px",
+    width: '65px',
+    height: '36px',
   },
   mini: {
-    width: "80px",
-    height: "50px",
+    width: '80px',
+    height: '50px',
   },
 };
 
@@ -40,29 +40,29 @@ const colorStyle = css`
   ${({ color, theme }) => css`
     background: ${theme.color[color]};
 
-    ${(color === "primary" || color === "secondary") &&
+    ${(color === 'primary' || color === 'secondary') &&
     css`
       color: ${theme.color.white};
     `}
 
-    ${color === "white" &&
+    ${color === 'white' &&
     css`
       color: ${theme.color.primary};
       border: 1px solid ${theme.color.gray};
     `}
 
-    ${color === "gray" &&
+    ${color === 'gray' &&
     css`
       color: ${theme.color.darkgray};
       pointer-events: none;
     `}
-    ${color === "kakao" &&
+    ${color === 'kakao' &&
     css`
       color: ${theme.color.primary};
     `}
   `};
 
-  ${({ color }) => color !== "gray" && hoverStyle};
+  ${({ color }) => color !== 'gray' && hoverStyle};
 `;
 
 export const ButtonStyle = styled.button`

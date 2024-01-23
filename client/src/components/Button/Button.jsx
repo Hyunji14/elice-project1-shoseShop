@@ -1,4 +1,4 @@
-import { ButtonStyle } from "./Button.styled";
+import { ButtonStyle } from './Button.styles';
 
 export default function Button({ text, color, size }) {
   return (

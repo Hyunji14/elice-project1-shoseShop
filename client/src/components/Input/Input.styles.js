@@ -1,17 +1,17 @@
-import styled, { css } from "styled-components";
+import styled, { css } from 'styled-components';
 
 const sizes = {
   long: {
-    width: "360px",
-    height: "30px",
+    width: '360px',
+    height: '30px',
   },
   medium: {
-    width: "260px",
-    height: "40px",
+    width: '260px',
+    height: '40px',
   },
   short: {
-    width: "80px",
-    height: "40px",
+    width: '80px',
+    height: '40px',
   },
 };
 

@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700&family=Noto+Sans+KR:wght@300;400;600;800&family=Open+Sans:wght@400;600&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700&family=Noto+Sans+KR:wght@300;400;600;800&family=Open+Sans:wght@400;600&display=swap');
 
 /* 공통코드 */
 * {
@@ -1307,7 +1307,7 @@ table {
 }
 
 .div__linkBtn--purchaseCompelete button {
-  font-family: "Noto Sans KR", sans-serif;
+  font-family: 'Noto Sans KR', sans-serif;
   display: block;
   flex-direction: column;
   justify-content: center;

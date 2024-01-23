@@ -1,7 +1,7 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect } from 'react';
 
-import { Container } from "./Top.styles";
-import { IoChevronUpOutline } from "react-icons/io5";
+import { Container } from './Top.styles';
+import { IoChevronUpOutline } from 'react-icons/io5';
 
 export default function Top() {
   const [showButton, setShowButton] = useState(false);
@@ -9,7 +9,7 @@ export default function Top() {
   const scrollToTop = () => {
     window.scrollTo({
       top: 0,
-      behavior: "smooth",
+      behavior: 'smooth',
     });
   };
 
@@ -22,9 +22,9 @@ export default function Top() {
       }
     };
 
-    window.addEventListener("scroll", handleShowButton);
+    window.addEventListener('scroll', handleShowButton);
     return () => {
-      window.removeEventListener("scroll", handleShowButton);
+      window.removeEventListener('scroll', handleShowButton);
     };
   }, []);
 

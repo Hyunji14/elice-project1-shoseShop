@@ -1,14 +1,14 @@
-import { Link, useNavigate } from "react-router-dom";
-import { useEffect, useState } from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faUser } from "@fortawesome/free-regular-svg-icons";
-import { faHeart } from "@fortawesome/free-regular-svg-icons";
-import { faArrowRightFromBracket } from "@fortawesome/free-solid-svg-icons";
-import logoImgage from "../../image/logo.png";
+import { Link, useNavigate } from 'react-router-dom';
+import { useEffect, useState } from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faUser } from '@fortawesome/free-regular-svg-icons';
+import { faHeart } from '@fortawesome/free-regular-svg-icons';
+import { faArrowRightFromBracket } from '@fortawesome/free-solid-svg-icons';
+import logoImgage from '../../image/logo.png';
 
-import { logout } from "../../pages/Login/LoginAPI";
-import { getBigCategory } from "../../pages/Admin/Category/CategoryAPI";
-import { isTokenEixst, removeCookie, getCookie } from "../../utils/cookieUtils";
+import { logout } from '../../pages/Login/LoginAPI';
+import { getBigCategory } from '../../pages/Admin/Category/CategoryAPI';
+import { isTokenEixst, removeCookie, getCookie } from '../../utils/cookieUtils';
 
 const Header = () => {
   const navigate = useNavigate();
@@ -19,13 +19,13 @@ const Header = () => {
 
   useEffect(() => {
     refresh();
-    if (getCookie("user_id") === "admin") {
+    if (getCookie('user_id') === 'admin') {
       checkAdmin(true);
     }
   }, []);
 
   const handlingLogin = () => {
-    setLoginStatus(isTokenEixst("token"));
+    setLoginStatus(isTokenEixst('token'));
   };
 
   const refresh = () => {
@@ -36,15 +36,15 @@ const Header = () => {
   };
 
   const clickLogoutBtn = () => {
-    if (window.confirm("로그아웃을 하시겠습니까?")) {
+    if (window.confirm('로그아웃을 하시겠습니까?')) {
       logout();
-      alert("로그아웃 되었습니다.");
+      alert('로그아웃 되었습니다.');
 
       setLoginStatus(false);
-      removeCookie("user_id");
-      navigate("/");
+      removeCookie('user_id');
+      navigate('/');
     } else {
-      alert("취소되었습니다.");
+      alert('취소되었습니다.');
     }
   };
 
