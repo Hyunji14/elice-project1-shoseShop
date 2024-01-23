@@ -1,5 +1,5 @@
-import { InputType } from "./Input.styled";
+import { InputStyle } from "./Input.styled";
 
 export default function Input({ size, placeholder }) {
-  return <InputType size={size} placeholder={placeholder} />;
+  return <InputStyle size={size} placeholder={placeholder} />;
 }

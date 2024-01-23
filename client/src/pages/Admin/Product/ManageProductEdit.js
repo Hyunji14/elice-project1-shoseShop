@@ -1,10 +1,9 @@
 import { useState, useEffect, useCallback, useRef } from 'react';
 import { useNavigate, state } from 'react-router-dom';
 import { useLocation, useParams } from 'react-router';
-import { updateProduct, getBrands } from '../api/productsAPI';
-import { getChildCategory, getBigCategory } from '../api/categoryAPI';
-import ManageImage from '../components/ManageImage';
-import baseShoeImage from '../image/base_product_image.png';
+import { updateProduct, getBrands } from '../../../api/productsAPI';
+import ManageImage from '../../../components/ManageImage';
+import baseShoeImage from '../../../image/base_product_image.png';
 import axios from 'axios';
 
 const ManageProductEdit = () => {
@@ -193,7 +192,7 @@ const ManageProductEdit = () => {
             </div>
           </div>
         </form>
-        <ManageImage prd={product}></ManageImage>
+        {/* <ManageImage prd={product}></ManageImage> */}
       </div>
     </div>
   );

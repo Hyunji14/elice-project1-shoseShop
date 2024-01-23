@@ -1,9 +1,8 @@
 import { useState, useEffect, useRef } from 'react';
 import { useNavigate, state } from 'react-router-dom';
 import { useLocation } from 'react-router';
-import { addProduct } from '../api/productsAPI';
-import { getBigCategory, getChildCategory } from '../api/categoryAPI';
-import ManageImage from '../components/ManageImage';
+import { addProduct } from '../../../api/productsAPI';
+import { getBigCategory, getChildCategory } from '../Category/CategoryAPI';
 
 const ManageProductNew = () => {
   let { state } = useLocation();

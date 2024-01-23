@@ -65,7 +65,7 @@ const colorStyle = css`
   ${({ color }) => color !== "gray" && hoverStyle};
 `;
 
-export const ButtonType = styled.button`
+export const ButtonStyle = styled.button`
   border-radius: 4px;
   font-weight: 600;
 

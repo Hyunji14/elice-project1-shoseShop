@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { getUserOrderList } from '../api/userOrderAPI';
+import { getUserOrderList } from '../../../api/userOrderAPI';
 
 const ManageOrder = () => {
   return (

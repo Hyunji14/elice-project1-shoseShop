@@ -1,4 +1,4 @@
-import * as FooterStyle from "./Footer.styled";
+import * as S from "./Footer.styled";
 
 const menu = [
   "이용약관",
@@ -9,19 +9,17 @@ const menu = [
 
 export default function Footer() {
   return (
-    <FooterStyle.FooterContainer>
-      <FooterStyle.FooterWrap>
+    <S.Container>
+      <S.Wrap>
         <div>
           <p> © 2023 Elice SW 7, 9 team In morning Inc. All Rights Reserved</p>
           <span>
-            {menu.map((item) => (
-              <button>{item}</button>
+            {menu.map((item, index) => (
+              <button key={index}>{item}</button>
             ))}
           </span>
         </div>
-
         <hr />
-
         <div>
           <p>
             상호명 : (주)아침엔 | 대표자명 : 김진주 | 사업자등록번호 :
@@ -34,7 +32,7 @@ export default function Footer() {
             판매자에게 있습니다.
           </p>
         </div>
-      </FooterStyle.FooterWrap>
-    </FooterStyle.FooterContainer>
+      </S.Wrap>
+    </S.Container>
   );
 }

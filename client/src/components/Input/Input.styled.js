@@ -28,7 +28,7 @@ const placeholderText = css`
   `}
 `;
 
-export const InputType = styled.input`
+export const InputStyle = styled.input`
   border: 1px solid ${(props) => props.theme.color.gray};
   border-radius: 4px;
   padding: 0 4px;

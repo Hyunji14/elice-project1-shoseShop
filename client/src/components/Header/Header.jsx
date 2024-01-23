@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { getBigCategory } from "../../api/categoryAPI";
-import { logout } from "../../api/authAPI";
+import { getBigCategory } from "../../pages/Admin/Category/CategoryAPI";
+import { logout } from "../../pages/Login/LoginAPI";
 import { isTokenEixst, removeCookie, getCookie } from "../../utils/cookieUtils";
 
 import {
@@ -11,7 +11,7 @@ import {
 } from "react-icons/io5";
 
 import logoImage from "../../image/logo.png";
-import * as HeaderStyle from "./Header.styled";
+import * as S from "./Header.styled";
 
 const menu = ["SHOES", "MAN", "WOMAN"];
 
@@ -54,27 +54,27 @@ export default function Header() {
   };
 
   return (
-    <HeaderStyle.HeaderContainer>
-      <HeaderStyle.HeaderWrap>
+    <S.Container>
+      <S.Wrap>
         <Link to="/">
-          <HeaderStyle.Logo>
+          <S.Logo>
             <img src={logoImage} alt="Sinbad logo" />
-          </HeaderStyle.Logo>
+          </S.Logo>
         </Link>
 
-        <HeaderStyle.Navigation>
+        <S.Navigation>
           {menu.map((item, index) => (
             <li key={index}>{item}</li>
           ))}
-        </HeaderStyle.Navigation>
+        </S.Navigation>
 
-        <HeaderStyle.Icon>
-          <HeaderStyle.Search>
-            <HeaderStyle.Input />
+        <S.Icon>
+          <S.Search>
+            <S.Input placeholder="상품을 검색해보세요." />
             <button>
               <IoSearchOutline size="18px" />
             </button>
-          </HeaderStyle.Search>
+          </S.Search>
 
           <button>
             <IoPersonOutline size="18px" />
@@ -83,8 +83,8 @@ export default function Header() {
           <button>
             <IoBagOutline size="18px" />
           </button>
-        </HeaderStyle.Icon>
-      </HeaderStyle.HeaderWrap>
-    </HeaderStyle.HeaderContainer>
+        </S.Icon>
+      </S.Wrap>
+    </S.Container>
   );
 }

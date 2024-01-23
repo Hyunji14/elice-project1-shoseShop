@@ -1,11 +1,14 @@
 import styled from "styled-components";
 
-export const HeaderContainer = styled.header`
+export const Container = styled.header`
   width: 100%;
   height: 40px;
+  background: ${(props) => props.theme.color.white};
+  position: sticky;
+  top: 0;
 `;
 
-export const HeaderWrap = styled.div`
+export const Wrap = styled.div`
   height: 100%;
   margin: 0 10%;
   display: flex;
@@ -27,17 +30,15 @@ export const Logo = styled.h1`
 export const Navigation = styled.ul`
   display: flex;
   gap: 20px;
-  &:hover {
-    opacity: 0.8;
-  }
 
   li {
     font-size: 18px;
     font-weight: 800;
     cursor: pointer;
+    border-bottom: 1px solid ${(props) => props.theme.color.white};
+
     &:hover {
-      border-bottom: 1px solid;
-      opacity: 80%;
+      border-bottom: 1px solid ${(props) => props.theme.color.gray};
     }
   }
 `;

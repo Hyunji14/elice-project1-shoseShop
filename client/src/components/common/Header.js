@@ -6,8 +6,8 @@ import { faHeart } from "@fortawesome/free-regular-svg-icons";
 import { faArrowRightFromBracket } from "@fortawesome/free-solid-svg-icons";
 import logoImgage from "../../image/logo.png";
 
-import { logout } from "../../api/authAPI";
-import { getBigCategory } from "../../api/categoryAPI";
+import { logout } from "../../pages/Login/LoginAPI";
+import { getBigCategory } from "../../pages/Admin/Category/CategoryAPI";
 import { isTokenEixst, removeCookie, getCookie } from "../../utils/cookieUtils";
 
 const Header = () => {

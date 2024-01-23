@@ -1,18 +1,18 @@
 dev:
   mongodb:
     primary:
-      url: sinbad0.p0s7gq5.mongodb.net
+      url: cluster0.rps6zr2.mongodb.net
       port: 27017
-      username: sinba_d
-      password: 1BOwsXly9gByCVUF
+      username: alibaba
+      password: kQj9gF1mRdjywGKx
   express:
     primary:
       location: http://localhost
-      port: 3000
+      port: 5002
   image_server:
     primary:
       location: http://kdt-sw-7-team09.elicecoding.com
-      port: 5000
+      port: 3007
 prod:
   mongodb:
     primary:
@@ -24,4 +24,4 @@ prod:
   image_server:
     primary:
       location: http://kdt-sw-7-team09.elicecoding.com
-      port: 5000
+      port: 3007

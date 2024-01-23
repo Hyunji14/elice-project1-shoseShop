@@ -1,14 +1,12 @@
-import * as TableStyle from "./Table.styled";
+import * as S from "./Table.styled";
 
 export default function Table({ title, data }) {
   return (
-    <TableStyle.TableType>
+    <S.TableType>
       <thead>
         <tr>
           {title.map((title, index) => (
-            <TableStyle.TableHeader key={`${title}-${index}`}>
-              {title}
-            </TableStyle.TableHeader>
+            <S.TableHeader key={`${title}-${index}`}>{title}</S.TableHeader>
           ))}
         </tr>
       </thead>
@@ -16,13 +14,11 @@ export default function Table({ title, data }) {
         {data.map((rowData, rowIndex) => (
           <tr key={rowIndex}>
             {rowData.map((cellData, cellIndex) => (
-              <TableStyle.TableData key={cellIndex}>
-                {cellData}
-              </TableStyle.TableData>
+              <S.TableData key={cellIndex}>{cellData}</S.TableData>
             ))}
           </tr>
         ))}
       </tbody>
-    </TableStyle.TableType>
+    </S.TableType>
   );
 }

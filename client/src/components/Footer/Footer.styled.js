@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const FooterContainer = styled.footer`
+export const Container = styled.footer`
   width: 100%;
   height: 240px;
   background: ${(props) => props.theme.color.primary};
@@ -18,7 +18,7 @@ export const FooterContainer = styled.footer`
   }
 `;
 
-export const FooterWrap = styled.div`
+export const Wrap = styled.div`
   height: 100%;
   margin: 0 10%;
   display: flex;
