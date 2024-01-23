@@ -21,12 +21,12 @@ function Footer() {
               </li>
               <li>
                 <Link to='/' className='li__a--footer-info-list'>
-                  위치 기반 서비스 약관
+                  위치기반 서비스약관
                 </Link>
               </li>
               <li>
                 <Link to='/' className='li__a--footer-info-list'>
-                  영상정보처리기기 운영 방침
+                  영상정보처리기기 운영방침
                 </Link>
               </li>
             </ul>
