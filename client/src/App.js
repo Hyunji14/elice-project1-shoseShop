@@ -4,8 +4,9 @@ import Header from './components/common/Header';
 import Footer from './components/common/Footer';
 
 import Home from './pages/Home/Home';
+import ProductPage from './pages/Products/ProductPage';
 import ProductList from './components/ProductList';
-import Detail from './pages/Product/Detail';
+import ProductDetail from './pages/Products/ProductDetail';
 import Cart from './pages/Order/Cart';
 import Address from './pages/Mypage/Adress';
 import PurchaseCompleted from './pages/Order/PurchaseCompleted';
@@ -19,7 +20,6 @@ import Category from './pages/Admin/Category/Category';
 import ManageProducts from './pages/Admin/Product/ManageProducts';
 import ManageProductNew from './pages/Admin/Product/ManageProductNew';
 import ManageProductEdit from './pages/Admin/Product/ManageProductEdit';
-import ManageOrder from './pages/Admin/Order/ManageOrder';
 
 //사용자 마이페이지
 import UserOrder from './pages/Mypage/UserOrder';
@@ -31,9 +31,13 @@ function App() {
     <Router>
       <Header />
       <Routes>
+        {/* TODO: 삭제예정 */}
+        <Route path='/plists/all' element={<ProductList />}></Route>
+
+        {/* */}
         <Route path='/' element={<Home />}></Route>
-        <Route path='/plist/all' element={<ProductList />}></Route>
-        <Route path='/detail/:id' element={<Detail />} />
+        <Route path='/products' element={<ProductPage />}></Route>
+        <Route path='/products/:id' element={<ProductDetail />} />
         <Route path='/cart' element={<Cart />} />
         <Route path='/address/:id' element={<Address />} />
         <Route path='/PurchaseCompleted' element={<PurchaseCompleted />} />
@@ -49,11 +53,9 @@ function App() {
           path='/productedit/:product_id'
           element={<ManageProductEdit />}
         ></Route>
-        <Route path='/plist/:listType' element={<ProductList />}></Route>
+        <Route path='/products/:listType' element={<ProductList />}></Route>
         <Route path='/user/order' element={<UserOrder />}></Route>
         <Route path='/user/:id' element={<Userinfo />}></Route>
-        {/* <Route path='/plist/woman' element={<ProductList />}></Route>
-        <Route path='/plist/man' element={<ProductList />}></Route> */}
       </Routes>
       <Footer />
     </Router>

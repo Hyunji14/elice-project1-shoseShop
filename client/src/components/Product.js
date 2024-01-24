@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 
-const Products = ({
+const Product = ({
   products,
   loading,
   brands,
@@ -16,7 +16,6 @@ const Products = ({
       .filter((brand) => brand._id === brandId)
       .map((brand) => brand.name);
   };
-
   return (
     <ul className={`list-group ${productStyle}`}>
       {products.map((product) => (
@@ -45,4 +44,4 @@ const Products = ({
   );
 };
 
-export default Products;
+export default Product;

@@ -4,7 +4,7 @@ import 'react-responsive-carousel/lib/styles/carousel.min.css';
 import * as S from './Home.styles';
 import visualImage1 from '../../image/visualImage1.png';
 import { getBrands, getProducts } from '../../api/productsAPI';
-import Products from '../../components/Products';
+import Products from '../../components/Product';
 import trendingimage from '../../image/trendingimage.png';
 
 function Home() {

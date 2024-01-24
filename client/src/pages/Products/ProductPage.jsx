@@ -1,11 +1,14 @@
-import { useState, useEffect, useCallback, useRef } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 import { useLocation, useParams } from 'react-router-dom';
-import { getBrands, getProducts } from '../api/productsAPI';
-import CategoryBar from './CategoryBar';
-import Pagination from './Pagination';
-import Products from './Product';
-import '../css/btn.css';
-const ProductList = () => {
+
+import * as S from './Product.styles';
+import Product from './Product';
+import { getBrands, getProducts } from '../../api/productsAPI';
+import CategoryBar from '../../components/CategoryBar';
+import Pagination from '../../components/Pagination';
+import '../../css/btn.css';
+
+function Products() {
   const { listType } = useParams();
 
   const [products, setProducts] = useState([]);
@@ -69,14 +72,14 @@ const ProductList = () => {
 
   const paginate = (pageNumber) => setPage(pageNumber);
   return (
-    <div className='div__manage-products-content'>
-      <div className='div__manage-products-content-wrap'>
+    <S.Container>
+      <S.ProductsHeaderDiv>
         <h2>상품 목록</h2>
         <div>{listType}페이지 입니다</div>
-        <h4 className='div__h4--page-name'>{total}개의 상품이 있습니다</h4>
-      </div>
+        <h4>{total}개의 상품이 있습니다</h4>
+      </S.ProductsHeaderDiv>
 
-      <div className='div__manage-products-content-flex'>
+      <S.ProductsContentsDiv>
         <CategoryBar
           selectedCategories={selectedCategories}
           setSelectedCategories={setSelectedCategories}
@@ -84,18 +87,13 @@ const ProductList = () => {
           handleCheckboxChange={handleCheckboxChange}
         />
 
-        <div className='div__div--product-list-width'>
-          <Products
-            products={products}
-            loading={loading}
-            brands={brands}
-            productStyle='list-product'
-            productStyle2='list-product2'
-          />
-        </div>
-      </div>
+        <S.ProductsListDiv>
+          <Product products={products} loading={loading} brands={brands} />
+        </S.ProductsListDiv>
+      </S.ProductsContentsDiv>
       <Pagination setPage={paginate} limit={limit} total={total} page={page} />
-    </div>
+    </S.Container>
   );
-};
-export default ProductList;
+}
+
+export default Products;
