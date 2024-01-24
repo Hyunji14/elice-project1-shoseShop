@@ -8,7 +8,8 @@ import visualImage2 from '../../image/visualImage2.jpg';
 import visualImage3 from '../../image/visualImage3.jpg';
 
 import { getBrands, getProducts } from '../../api/productsAPI';
-import Products from '../../components/Products';
+import Products from '../../components/Product';
+import trendingimage from '../../image/trendingimage.png';
 import Top from '../../components/Top/Top';
 
 import { IoChevronBackOutline, IoChevronForwardOutline } from 'react-icons/io5';
