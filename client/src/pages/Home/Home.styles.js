@@ -1,25 +1,19 @@
 import styled from 'styled-components';
+import Slider from 'react-slick';
 
 export const Container = styled.div`
   width: 100%;
-  margin-top: 70px;
 
   ul {
     width: 100%;
-    height: 600px;
-    background: var(--black-color);
-    overflow: hidden;
 
     & li img {
       width: 100%;
     }
 
     div {
-      position: relative;
       display: flex;
       justify-content: space-between;
-      height: 600px;
-      z-index: 9;
     }
   }
 `;
@@ -38,6 +32,51 @@ export const BestItemsDiv = styled.div`
     margin: 100px 0 50px;
     text-align: center;
   }
+`;
+
+export const SlideWrap = styled.div`
+  width: 100%;
+  height: 40vw;
+  /* max-height: 456px; */
+  overflow: hidden;
+`;
+
+export const StyledSlide = styled(Slider)`
+  width: 100%;
+  max-width: 100%;
+  position: relative;
+
+  .slick-list {
+    position: absolute;
+    overflow: hidden;
+  }
+
+  .slick-slider {
+    display: flex;
+  }
+
+  .slick-track {
+    display: flex;
+    height: 100%;
+  }
+
+  .slick-dots {
+    position: absolute;
+    top: 50vh;
+  }
+
+  img {
+    width: 100vw;
+    max-width: 100%;
+    height: 100%;
+  }
+`;
+
+export const ButtonWrap = styled.div`
+  top: 25%;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 12%;
 `;
 
 export const TrendItemsDiv = styled.div`

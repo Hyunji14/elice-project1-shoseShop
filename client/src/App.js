@@ -1,7 +1,7 @@
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 
-import Header from './components/common/Header';
-import Footer from './components/common/Footer';
+import Header from './components/Header/Header';
+import Footer from './components/Footer/Footer';
 
 import Home from './pages/Home/Home';
 import ProductPage from './pages/Products/ProductPage';
@@ -33,7 +33,6 @@ function App() {
       <Routes>
         {/* TODO: 삭제예정 */}
         <Route path='/plists/all' element={<ProductList />}></Route>
-
         {/* */}
         <Route path='/' element={<Home />}></Route>
         <Route path='/products' element={<ProductPage />}></Route>
@@ -45,12 +44,12 @@ function App() {
         <Route path='/auth/join' element={<Join />}></Route>
         <Route path='/userinfo' element={<Userinfo />}></Route>
         {/* 관리자페이지 */}
-        <Route path='/category' element={<Category />}></Route>
-        <Route path='/manageproducts' element={<ManageProducts />}></Route>
-        <Route path='/productnew' element={<ManageProductNew />}></Route>
-        <Route path='/plist' element={<ProductList />}></Route>
+        <Route path="/category" element={<Category />}></Route>
+        <Route path="/manageproducts" element={<ManageProducts />}></Route>
+        <Route path="/productnew" element={<ManageProductNew />}></Route>
+        <Route path="/plist" element={<ProductList />}></Route>
         <Route
-          path='/productedit/:product_id'
+          path="/productedit/:product_id"
           element={<ManageProductEdit />}
         ></Route>
         <Route path='/products/:listType' element={<ProductList />}></Route>
