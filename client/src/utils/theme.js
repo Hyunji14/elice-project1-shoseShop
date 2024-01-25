@@ -6,8 +6,8 @@ export const theme = {
     darkgray: '#595959',
     mediumgray: '#8B8787',
     gray: '#d9d9d9',
-    lightgray: '#F8F8F8', // 기본 문자 색상
-    error: '#FF0000', // 오류 색상
+    lightgray: '#F8F8F8',
+    error: '#FF0000',
     kakao: '#F2E42D',
   },
 };

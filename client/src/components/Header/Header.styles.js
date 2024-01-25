@@ -64,4 +64,5 @@ export const Input = styled.input`
   height: 20px;
   border-bottom: 1px solid;
   padding: 0 20px 0 2px;
+  cursor: text;
 `;

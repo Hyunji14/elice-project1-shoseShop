@@ -1,6 +1,10 @@
 import styled, { css } from 'styled-components';
 
 const sizes = {
+  long: {
+    width: '410px',
+    height: '60px',
+  },
   large: {
     width: '260px',
     height: '50px',
@@ -19,7 +23,7 @@ const sizes = {
   },
   mini: {
     width: '80px',
-    height: '50px',
+    height: '60px',
   },
 };
 
@@ -54,7 +58,7 @@ const colorStyle = css`
     ${color === 'gray' &&
     css`
       color: ${theme.color.darkgray};
-      pointer-events: none;
+      /* pointer-events: none; */
     `}
     ${color === 'kakao' &&
     css`

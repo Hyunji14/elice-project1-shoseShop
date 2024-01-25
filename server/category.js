@@ -1,9 +1,9 @@
-const express = require("express");
+const express = require('express');
 const router = express.Router();
 
-router.get("/", (req, res) => {
+router.get('/', (req, res) => {
   // res.send("i am category");
-  res.json({ brand: "nike" });
+  res.json({ brand: 'nike' });
 });
 
 module.exports = router;

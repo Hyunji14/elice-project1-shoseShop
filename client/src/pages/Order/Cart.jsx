@@ -1,10 +1,15 @@
-import CartWrapper from '../../components/cart/CartWrapper';
-import React, { useState, useEffect } from 'react';
-import SelectWrapper from '../../components/cart/SelectWrapper';
+import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
+import CartWrapper from '../../components/Cart/CartWrapper';
+import SelectWrapper from '../../components/Cart/SelectWrapper';
 
 import { getCookie } from '../../utils/cookieUtils';
 import { newOrder } from '../../api/cartAPI';
+
+import PurchasePrice from '../../components/Cart/PurchasePrice/PurchasePrice';
+import ProductList from '../../components/Cart/ProductList/ProductList';
+
+const NoFoundMessage = '장바구니에 담긴 상품이 없습니다.';
 
 const Cart = () => {
   const navigate = useNavigate();
@@ -112,28 +117,6 @@ const Cart = () => {
     }
   };
 
-  //선택 삭제 (에러 발생)
-  // const selectDelete = () => {
-  //   if (selectedItems.length === 0) {
-  //     alert("선택된 상품이 없습니다.");
-  //     return;
-  //   }
-
-  //   if (window.confirm(`선택한 상품을 장바구니에서 삭제하시겠습니까?`)) {
-  //     const updatedCartItems = { ...savedItem };
-
-  //     selectedItems.forEach((itemId) => {
-  //       const cartProductKey = `cartProduct_${itemId}`;
-  //       delete updatedCartItems[itemId];
-  //       localStorage.removeItem(cartProductKey);
-  //     });
-
-  //     setSavedItem(updatedCartItems);
-  //     setSelectedItems([]);
-  //     alert("선택한 상품이 삭제되었습니다.");
-  //   }
-  // };
-
   // 선택 삭제 (정상 동작)
   const selectDelete = () => {
     if (selectedItems.length === 0) {
@@ -220,11 +203,12 @@ const Cart = () => {
       setIsPurchase(true);
     }
   }, [selectedItems]);
+
   return (
     <>
-      <div className='body__div--cart-div-size'>
-        <h3 className='div__h3--cart-title'>장바구니</h3>
-        <div className='div__div--cart-content-align'>
+      <div className="body__div--cart-div-size">
+        <h3 className="div__h3--cart-title">장바구니</h3>
+        <div className="div__div--cart-content-align">
           <SelectWrapper
             isAllChecked={isAllChecked}
             selectDelete={selectDelete}
@@ -242,30 +226,8 @@ const Cart = () => {
             handlePurchase={handlePurchase}
             isPurchase={isPurchase}
           />
-        </div>
-        <div className='deliveryadress'>
-          <form className='deliveryadress__container'>
-            <input
-              type='text'
-              className='form__label--delivery-address'
-              placeholder='주소를 입력해주세요.'
-              required
-              value={address}
-              onChange={(e) => {
-                setAddress(e.target.value);
-              }}
-            />
-            <input
-              type='text'
-              className='form__label--delivery-address-detail'
-              placeholder='상세 주소를 입력해주세요.'
-              required
-              value={addressDetail}
-              onChange={(e) => {
-                setaddressDetail(e.target.value);
-              }}
-            />
-          </form>
+          <PurchasePrice />
+          <ProductList />
         </div>
       </div>
     </>

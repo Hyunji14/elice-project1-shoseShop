@@ -6,3 +6,5 @@ image_server/**/images/**
 .DS_Store
 
 server/.env
+
+server/config.yml

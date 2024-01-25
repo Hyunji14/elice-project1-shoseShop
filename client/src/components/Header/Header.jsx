@@ -76,11 +76,11 @@ export default function Header() {
             </button>
           </S.Search>
 
-          <button>
+          <button onClick={() => navigate('/auth/login')}>
             <IoPersonOutline size="18px" />
           </button>
 
-          <button>
+          <button onClick={() => navigate('/cart')}>
             <IoBagOutline size="18px" />
           </button>
         </S.Icon>
