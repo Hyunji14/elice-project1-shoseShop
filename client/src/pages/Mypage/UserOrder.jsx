@@ -1,18 +1,14 @@
 import { useEffect, useState } from 'react';
-import {
-  getUserOrderList,
-  deleteOrder,
-  getImage,
-} from '../../api/userOrderAPI';
+import { getUserOrderList, deleteOrder } from './UserOrderAPI';
 import { getCookie } from '../../utils/cookieUtils';
 import { Link } from 'react-router-dom';
 
-import '../../css/userOrderCSS.css';
+import * as S from './MyPage.styles';
+import { PATH } from '../../global/constants';
 
 function UserOrder() {
   const [userOrderList, setUserOrderList] = useState([]);
   const [user_id, setUserId] = useState(getCookie('user_id'));
-  const [imgSrc, setImgSrc] = useState('');
 
   const getOrderList = async () => {
     //TODO: 로그인 이후에 id 값 가져오기
@@ -36,15 +32,16 @@ function UserOrder() {
   };
 
   return (
-    <div className='body__div--orderList-content'>
-      <div className='body__div--userBtn'>
-        <Link to='/userinfo'>회원정보 수정</Link>
-        <Link to='/user/order'>주문 내역</Link>
-      </div>
-      <h3 className='body__h3--orderList-logo'>주문 내역</h3>
+    <S.Container>
+      <S.MyPageHeaderButtonDiv>
+        <Link to={PATH.userInfo}>회원정보 수정</Link>
+        <Link to={PATH.userOrder}>주문 내역</Link>
+      </S.MyPageHeaderButtonDiv>
 
-      <div className='div__orderList--container'>
-        <div className='div__orderList--header'>
+      <h3>주문 내역</h3>
+
+      <S.MyPageContextDiv>
+        <S.OrderListHeaderDiv>
           <div>상품 이미지</div>
           <div>주문 일자</div>
           <div>가격</div>
@@ -52,36 +49,25 @@ function UserOrder() {
           <div>상품 총 개수</div>
           <div>주소 수정</div>
           <div>주문 취소</div>
-        </div>
+        </S.OrderListHeaderDiv>
 
-        <div className='div__orderList--contents'>
+        <S.OrderListContentsDiv>
           {userOrderList.length < 1 ? (
-            <div className='div__orderList--order'>
+            <S.OrderRowDiv>
               <div>현재 주문한 내역이 없습니다</div>
-            </div>
+            </S.OrderRowDiv>
           ) : (
             userOrderList.map((order) => {
               return (
-                <div key={order['_id']} className='div__orderList--order'>
-                  <div className='div__orderList--order-column'>
-                    <img
-                      className='img__orderList-titleImg'
-                      src={order.imgUrl}
-                    />
-                  </div>
-                  <div className='div__orderList--order-column'>
-                    {order['date']}
-                  </div>
-                  <div className='div__orderList--order-column'>
-                    {order['total_price']}
-                  </div>
-                  <div className='div__orderList--order-column'>
-                    {order['delivery_state']}
-                  </div>
-                  <div className='div__orderList--order-column'>
-                    {order['items'].length}
-                  </div>
-                  <div className='div__orderList--order-column'>
+                <S.OrderRowDiv key={order['_id']}>
+                  <S.OrderColumnDiv>
+                    <S.OrderProductImg src={order.imgUrl} />
+                  </S.OrderColumnDiv>
+                  <S.OrderColumnDiv>{order['date']}</S.OrderColumnDiv>
+                  <S.OrderColumnDiv>{order['total_price']}</S.OrderColumnDiv>
+                  <S.OrderColumnDiv>{order['delivery_state']}</S.OrderColumnDiv>
+                  <S.OrderColumnDiv>{order['items'].length}</S.OrderColumnDiv>
+                  <S.OrderColumnDiv>
                     {order['delivery_state'] === '주문 완료' ? (
                       <Link
                         to={`/address/${order['_id']}?address=${order['address']}&detail=${order['addressDetail']}`}
@@ -91,28 +77,27 @@ function UserOrder() {
                     ) : (
                       '수정불가'
                     )}
-                  </div>
-                  <div className='div__orderList--order-column'>
+                  </S.OrderColumnDiv>
+                  <S.OrderColumnDiv>
                     {order['delivery_state'] === '주문 완료' ? (
-                      <button
-                        className='button__orderDelete'
+                      <S.OrderDeleteButton
                         value={order['_id']}
                         key={order['_id']}
                         onClick={clickDeleteBtn}
                       >
                         취소하기
-                      </button>
+                      </S.OrderDeleteButton>
                     ) : (
                       '취소불가'
                     )}
-                  </div>
-                </div>
+                  </S.OrderColumnDiv>
+                </S.OrderRowDiv>
               );
             })
           )}
-        </div>
-      </div>
-    </div>
+        </S.OrderListContentsDiv>
+      </S.MyPageContextDiv>
+    </S.Container>
   );
 }
 

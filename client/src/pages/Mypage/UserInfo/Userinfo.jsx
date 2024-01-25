@@ -1,7 +1,9 @@
 import { useEffect, useState } from 'react';
-import { getCookie, removeCookie } from '../../utils/cookieUtils';
+import { getCookie, removeCookie } from '../../../utils/cookieUtils';
 import { useNavigate } from 'react-router-dom';
-import { getUser, updateUserInfo, withDrawUser } from '../../api/userInfoAPI';
+import { getUser, updateUserInfo, withDrawUser } from './userInfoAPI';
+
+import * as S from './UserInfo.styles';
 
 function Userinfo() {
   const navigate = useNavigate();
@@ -72,60 +74,50 @@ function Userinfo() {
   };
 
   return (
-    <div className='body__div--login-content'>
-      <h3 className='body__h3--login-logo'>SINBA_D</h3>
-      <form>
-        <label for='username' className='form__label--text-hidden'>
-          이름
-        </label>
+    <S.Container>
+      <h3>SINBA_D</h3>
+
+      <S.UserInfoContextForm>
         <input
           type='text'
-          className='form__input--user-id'
           placeholder='이름'
           required
           value={userName}
           onChange={(e) => setUserName(e.target.value)}
         />
         <br />
-        <label for='password' className='form__label--text-hidden'>
-          비밀번호
-        </label>
         <input
           type='password'
-          className='form__input--user-password'
           placeholder='비밀번호'
           required
           value={userFirstPassword}
           onChange={(e) => setUserFirstPassword(e.target.value)}
         />
         <br />
-        <label for='password' className='form__label--text-hidden'>
-          비밀번호 확인
-        </label>
         <input
           type='password'
-          className='form__input--user-password'
           placeholder='비밀번호 확인'
           required
           value={userLastPassword}
           onChange={(e) => setUserLastPassword(e.target.value)}
         />
         <br />
-        <input
+        <S.UserInfoModifyButton
           type='submit'
-          className='form__input--modify-button'
           value='수정하기'
           onClick={clickUpdateButton}
-        />
-        <button
+        >
+          수정하기
+        </S.UserInfoModifyButton>
+        <S.UserWithdrawButton
           type='button'
           onClick={clickWithDrawBtn}
           className='form__input--delete-account-button'
         >
           탈퇴하기
-        </button>
-      </form>
-    </div>
+        </S.UserWithdrawButton>
+      </S.UserInfoContextForm>
+    </S.Container>
   );
 }
 
