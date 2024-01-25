@@ -8,7 +8,7 @@ import ProductPage from './pages/Products/ProductPage';
 import ProductList from './components/ProductList';
 import ProductDetail from './pages/Products/ProductDetail';
 import Cart from './pages/Order/Cart';
-import Address from './pages/Mypage/Adress';
+import Address from './pages/MyPage/Adress';
 import PurchaseCompleted from './pages/Order/PurchaseCompleted';
 
 // 로그인, 회원가입
@@ -22,8 +22,9 @@ import ManageProductNew from './pages/Admin/Product/ManageProductNew';
 import ManageProductEdit from './pages/Admin/Product/ManageProductEdit';
 
 //사용자 마이페이지
-import UserOrder from './pages/Mypage/UserOrder';
-import Userinfo from './pages/Mypage/Userinfo';
+import MyPage from './pages/MyPage/MyPage';
+import UserOrder from './pages/MyPage/UserOrder';
+import Userinfo from './pages/MyPage/UserInfo/Userinfo';
 import './css/app.css';
 
 function App() {
@@ -42,14 +43,15 @@ function App() {
         <Route path='/PurchaseCompleted' element={<PurchaseCompleted />} />
         <Route path='/auth/login' element={<Login />}></Route>
         <Route path='/auth/join' element={<Join />}></Route>
-        <Route path='/userinfo' element={<Userinfo />}></Route>
+        <Route path='/user' element={<MyPage />}></Route>
+        <Route path='/user/settings' element={<Userinfo />}></Route>
         {/* 관리자페이지 */}
-        <Route path="/category" element={<Category />}></Route>
-        <Route path="/manageproducts" element={<ManageProducts />}></Route>
-        <Route path="/productnew" element={<ManageProductNew />}></Route>
-        <Route path="/plist" element={<ProductList />}></Route>
+        <Route path='/category' element={<Category />}></Route>
+        <Route path='/manageproducts' element={<ManageProducts />}></Route>
+        <Route path='/productnew' element={<ManageProductNew />}></Route>
+        <Route path='/plist' element={<ProductList />}></Route>
         <Route
-          path="/productedit/:product_id"
+          path='/productedit/:product_id'
           element={<ManageProductEdit />}
         ></Route>
         <Route path='/products/:listType' element={<ProductList />}></Route>

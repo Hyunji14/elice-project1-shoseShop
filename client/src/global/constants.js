@@ -3,4 +3,7 @@ export const PATH = {
   root: '/',
   login: '/auth/login',
   join: '/auth/join',
+  myPage: '/user',
+  userOrder: '/user/orders',
+  userInfo: '/user/settings',
 };
