@@ -9,13 +9,9 @@ export default function CheckBox() {
   };
 
   return (
-    <S.Label htmlFor="checkbox">
-      <S.Input
-        type="checkbox"
-        id="checkbox"
-        onClick={onClickCheck}
-        isChecked={isChecked}
-      />
-    </S.Label>
+    <>
+      <S.Input type="checkbox" id="checkbox" onClick={onClickCheck} />
+      <S.Label htmlFor="checkbox"></S.Label>
+    </>
   );
 }

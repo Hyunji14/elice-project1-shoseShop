@@ -1,9 +1,8 @@
 import styled from 'styled-components';
 
 export const Container = styled.div`
-  width: 350px;
-  height: 300px;
-  border: 1px solid ${(props) => props.theme.color.gray};
+  width: 260px;
+  height: 250px;
 
   > P {
     font-size: 30px;

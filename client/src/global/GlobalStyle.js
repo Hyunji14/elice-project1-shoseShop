@@ -6,8 +6,8 @@ const GlobalStyle = createGlobalStyle`
   }
 
   body {
+    width: 100%;
     letter-spacing: -2%;
-    box-sizing: border-box;
     margin: 0;
     padding: 0;
   }

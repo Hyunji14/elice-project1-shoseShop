@@ -1,5 +1,6 @@
 import * as S from './AddProduct.styles';
-import { IoClose, IoRemove, IoAdd } from 'react-icons/io5';
+import { IoClose } from 'react-icons/io5';
+import Quantity from '../../common/Quantity/Quantity';
 
 export default function AddProduct() {
   return (
@@ -11,15 +12,7 @@ export default function AddProduct() {
         </button>
       </S.Wrap>
       <S.Wrap>
-        <S.CountContainer>
-          <S.CountButton>
-            <IoRemove />
-          </S.CountButton>
-          <S.CountNumber>1</S.CountNumber>
-          <S.CountButton>
-            <IoAdd />
-          </S.CountButton>
-        </S.CountContainer>
+        <Quantity />
         <p>25,000 원</p>
       </S.Wrap>
     </S.Container>

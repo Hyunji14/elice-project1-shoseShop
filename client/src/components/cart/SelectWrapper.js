@@ -1,7 +1,7 @@
 const SelectWrapper = ({ selectDelete, isAllChecked, handleAllChecked }) => {
   return (
     <div className="div__div--select-display">
-      <label className="checkbox-container" for="checkbox-all">
+      <label className="checkbox-container">
         <input
           type="checkbox"
           className="cart-checkbox"

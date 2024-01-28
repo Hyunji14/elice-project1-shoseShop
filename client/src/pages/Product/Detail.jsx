@@ -5,8 +5,15 @@ import baseProductImgage from '../../image/base_product_image.png';
 
 import * as S from './Detail.styles';
 import AddProduct from '../../components/Detail/AddProduct/AddProduct';
-import SelectOption from '../../components/Detail/Select/Select';
-import Button from '../../components/Button/Button';
+import SelectOption from '../../components/common/Select/Select';
+import Button from '../../components/common/Button/Button';
+import Top from '../../components/common/Top/Top';
+
+const sizeOption = [
+  { value: '220', label: '220' },
+  { value: '225', label: '225' },
+  { value: '230', label: '230' },
+];
 
 function Detail() {
   const navigate = useNavigate();
@@ -59,6 +66,7 @@ function Detail() {
 
   return (
     <S.Container>
+      <Top />
       <S.DetailInformation>
         <S.Figure>
           <S.Image src={imgSrc} />
@@ -68,7 +76,11 @@ function Detail() {
             <p>NIKE</p>
             <p>나이키 코드 버로우 로우 2 / AMSKDAL2313</p>
             <p>69,000 원</p>
-            <SelectOption />
+            <SelectOption
+              options={sizeOption}
+              size="detailSize"
+              placeholder="사이즈를 선택해주세요."
+            />
             <AddProduct />
             <hr />
             <S.TotalPrice>
@@ -77,7 +89,7 @@ function Detail() {
             </S.TotalPrice>
             <S.ButtonContainer>
               <Button color="secondary" size="long" text="구매하기" />
-              <Button color="gray" size="mini" />
+              <Button color="gray" size="mini" text="장바구니" />
             </S.ButtonContainer>
           </div>
         </S.TextContainer>

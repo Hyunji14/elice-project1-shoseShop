@@ -190,31 +190,31 @@ const ManageImage = ({ handler }) => {
       <Modal isOpen={modalIsOpen} style={customModalStyles} ariaHideApp={true}>
         {modalText}
       </Modal>
-      <div className='div__div--file-upload-wrap'>
-        <h4 className='div__div--file-upload-title'>이미지 업로드</h4>
+      <div className="div__div--file-upload-wrap">
+        <h4 className="div__div--file-upload-title">이미지 업로드</h4>
         <input
-          className='div__input--upload-name'
-          placeholder='메인이미지'
+          className="div__input--upload-name"
+          placeholder="메인이미지"
           readOnly
         />
         <label
-          htmlFor='file'
+          htmlFor="file"
           onClick={handleAddImages('main')}
-          className='div__div--file-search'
+          className="div__div--file-search"
         ></label>
         <input
-          id='file'
-          type='file'
+          id="file"
+          type="file"
           ref={mainInputRef}
           onChange={handleFilesChange('main')}
-          accept='image/jpg,image/png,image/jpeg,image/gif'
+          accept="image/jpg,image/png,image/jpeg,image/gif"
           multiple
-          className='div__input--file-search'
+          className="div__input--file-search"
           hidden
         />
         <button
           onClick={handleAddImages('main')}
-          className='div__button---file-add'
+          className="div__button---file-add"
         >
           파일추가
         </button>
@@ -223,37 +223,37 @@ const ManageImage = ({ handler }) => {
             {mainImages?.map((img, index) => {
               return (
                 <div>
-                  <span className='div__span--uploaded-url'>{img.url}</span>
+                  <span className="div__span--uploaded-url">{img.url}</span>
                   <span>
                     <button
-                      className='btn-up'
+                      className="btn-up"
                       onClick={handleMove('main', '-', index)}
                     >
                       <FontAwesomeIcon
                         icon={faCircleUp}
-                        className='div__button--cart-button div__button--cart-button-up'
+                        className="div__button--cart-button div__button--cart-button-up"
                       />
                     </button>
                   </span>
                   <span>
                     <button
-                      className='btn-down'
+                      className="btn-down"
                       onClick={handleMove('main', '+', index)}
                     >
                       <FontAwesomeIcon
                         icon={faCircleDown}
-                        className='div__button--cart-button div__button--cart-button-down'
+                        className="div__button--cart-button div__button--cart-button-down"
                       />
                     </button>
                   </span>
                   <span>
                     <button
-                      className='btn-delete'
+                      className="btn-delete"
                       onClick={handleDeleteImage('main', img.image_id)}
                     >
                       <FontAwesomeIcon
                         icon={faTrash}
-                        className='div__button--cart-button div__button--cart-button-delete'
+                        className="div__button--cart-button div__button--cart-button-delete"
                       />
                     </button>
                   </span>
@@ -261,29 +261,29 @@ const ManageImage = ({ handler }) => {
               );
             })}
           </div>
-          <div className='div__div--img-number'>
+          <div className="div__div--img-number">
             총 {mainImages?.length}개의 메인이미지
           </div>
         </div>
       </div>
-      <div className='filebox'>
+      <div className="filebox">
         <input
-          className='upload-name div__input--upload-name'
-          placeholder='상세이미지'
+          className="upload-name div__input--upload-name"
+          placeholder="상세이미지"
           readOnly
         />
-        <label htmlFor='file' onClick={handleAddImages('main')}></label>
+        <label htmlFor="file" onClick={handleAddImages('main')}></label>
         <input
-          type='file'
+          type="file"
           ref={detailInputRef}
           onChange={handleFilesChange('detail')}
-          accept='image/jpg,image/png,image/jpeg,image/gif'
+          accept="image/jpg,image/png,image/jpeg,image/gif"
           multiple
           hidden
         />
         <button
           onClick={handleAddImages('detail')}
-          className='div__button---file-add'
+          className="div__button---file-add"
         >
           파일추가
         </button>
@@ -292,7 +292,7 @@ const ManageImage = ({ handler }) => {
             {detailImages?.map((img, index) => {
               return (
                 <div>
-                  <span className='div__span--uploaded-url'>{img.url}</span>
+                  <span className="div__span--uploaded-url">{img.url}</span>
 
                   {/* <img
                     src={img.url}
@@ -302,34 +302,34 @@ const ManageImage = ({ handler }) => {
                   /> */}
                   <span>
                     <button
-                      className='btn-up'
+                      className="btn-up"
                       onClick={handleMove('detail', '-', index)}
                     >
                       <FontAwesomeIcon
                         icon={faCircleUp}
-                        className='div__button--cart-button div__button--cart-button-up'
+                        className="div__button--cart-button div__button--cart-button-up"
                       />
                     </button>
                   </span>
                   <span>
                     <button
-                      className='btn-down'
+                      className="btn-down"
                       onClick={handleMove('detail', '+', index)}
                     >
                       <FontAwesomeIcon
                         icon={faCircleDown}
-                        className='div__button--cart-button div__button--cart-button-down'
+                        className="div__button--cart-button div__button--cart-button-down"
                       />
                     </button>
                   </span>
                   <span>
                     <button
-                      className='btn-delete'
+                      className="btn-delete"
                       onClick={handleDeleteImage('detail', img.image_id)}
                     >
                       <FontAwesomeIcon
                         icon={faTrash}
-                        className='div__button--cart-button div__button--cart-button-delete'
+                        className="div__button--cart-button div__button--cart-button-delete"
                       />
                     </button>
                   </span>
@@ -338,12 +338,12 @@ const ManageImage = ({ handler }) => {
             })}
           </div>
         </div>
-        <div className='div__div--img-number'>
+        <div className="div__div--img-number">
           총 {detailImages?.length}개의 상세이미지
         </div>
       </div>
 
-      <button onClick={handleUpdateImages} className='div__button--image-save'>
+      <button onClick={handleUpdateImages} className="div__button--image-save">
         이미지 저장
       </button>
     </div>
