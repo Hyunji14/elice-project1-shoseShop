@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import ChildCategory from './ChildCategory';
+
 import {
   getCategory,
   getBigCategory,
@@ -9,10 +9,9 @@ import {
   updateCategory,
   getCategoryById,
 } from './CategoryAPI';
-import Title from '../../../components/common/Title/Title';
-import Button from '../../../components/common/Button/Button';
-import Table from '../../../components/common/Table/Table';
-
+import Title from '../../../components/Title/Title';
+import Button from '../../../components/Button/Button';
+import Table from '../../../components/Table/Table';
 import * as S from './Category.styles';
 
 const title = ['순서', '카테고리명', '분류', '관리'];
@@ -21,7 +20,7 @@ const tableData = [
   ['위 아래', 'NIKE', '소분류', '수정 삭제'],
 ];
 
-function CategoryManagement() {
+function Category() {
   const navigate = useNavigate();
   // 데이터 가져오기 변수
   const [bigCategory, setBigCategory] = useState([]);
@@ -124,4 +123,4 @@ function CategoryManagement() {
   );
 }
 
-export default CategoryManagement;
+export default Category;

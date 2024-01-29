@@ -1,22 +1,16 @@
 import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import CartWrapper from '../../components/Cart/CartWrapper';
-import SelectWrapper from '../../components/Cart/SelectWrapper';
 
 import { getCookie } from '../../utils/cookieUtils';
 import { newOrder } from '../../api/cartAPI';
-
-import Title from '../../components/common/Title/Title';
-import CheckBox from '../../components/Cart/Checkbox/Checkbox';
-import Button from '../../components/common/Button/Button';
-import PurchasePrice from '../../components/Cart/PurchasePrice/PurchasePrice';
-import ProductList from '../../components/Cart/ProductList/ProductList';
-
+import Title from '../../components/Title/Title';
+import Button from '../../components/Button/Button';
+import PurchasePrice from '../../components/PurchasePrice/PurchasePrice';
+import CheckBox from './Checkbox/Checkbox';
+import ProductList from './ProductList/ProductList';
 import * as S from './Cart.styles';
 
-const NoFoundMessage = '장바구니에 담긴 상품이 없습니다.';
-
-const Cart = () => {
+function Cart() {
   const navigate = useNavigate();
 
   // 장바구니에 넣은 신발
@@ -246,6 +240,6 @@ const Cart = () => {
       </S.Wrap>
     </S.Container>
   );
-};
+}
 
 export default Cart;

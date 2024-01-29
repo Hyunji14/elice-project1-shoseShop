@@ -1,32 +1,34 @@
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import styled from 'styled-components';
-import MainLayout from './MainLayout';
-import AdminLayout from './AdminLayout';
 
+import MainLayout from './layout/MainLayout';
+import AdminLayout from './layout/AdminLayout';
+
+// Home
 import Home from './pages/Home/Home';
-import List from './pages/List/List';
-import Detail from './pages/Product/Detail';
+
+// Products
+import ProductPage from './pages/Products/ProductPage';
+import ProductDetail from './pages/Products/ProductDetail';
 import Cart from './pages/Cart/Cart';
-import Address from './pages/Mypage/Adress';
-import PurchaseCompleted from './pages/Order/PurchaseCompleted';
 import Order from './pages/Order/Order';
 
-// 로그인, 회원가입
+// User
 import Login from './pages/Login/Login';
 import Join from './pages/Join/Join';
 
-// 관리자 페이지
-import CategoryManagement from './pages/Admin/Category/Category';
-import ProductManagement from './pages/Admin/Product/ProductManagement/ProductManagement';
+// Admin
+import Category from './pages/Admin/Category/Category';
+import ManageProducts from './pages/Admin/Product/ManageProduct/ManageProducts';
 import AddProduct from './pages/Admin/Product/AddProduct/AddProduct';
-import ManageProductEdit from './pages/Admin/Product/ProductManagement/ManageProductEdit';
-import OrderManagement from './pages/Admin/Order/OrderManagement';
-import User from './pages/Admin/User/User';
+import ManageProductEdit from './pages/Admin/Product/ManageProduct/ManageProductEdit';
+import ManageOrder from './pages/Admin/Order/ManageOrder';
+import ManageUser from './pages/Admin/User/ManageUser';
 
-//사용자 마이페이지
+// Mypage
+import MyPage from './pages/Mypage/MyPage';
 import UserOrder from './pages/Mypage/UserOrder/UserOrder';
 import Userinfo from './pages/Mypage/Userinfo/Userinfo';
-import './css/app.css';
 
 const Flex = styled.div`
   display: flex;
@@ -39,18 +41,18 @@ function App() {
         <Routes>
           <Route element={<MainLayout />}>
             <Route path="/" element={<Home />}></Route>
-            <Route path="/plist/all" element={<List />}></Route>
-            <Route path="/plist/:listType" element={<List />}></Route>
-            <Route path="/detail/:id" element={<Detail />} />
+            <Route path="/products" element={<ProductPage />}></Route>
+            <Route path="/products/:listType" element={<ProductPage />}></Route>
+            <Route path="/products/detail/:id" element={<ProductDetail />} />
             <Route path="/cart" element={<Cart />} />
             <Route path="/order" element={<Order />} />
-            <Route path="/address/:id" element={<Address />} />
-            <Route path="/PurchaseCompleted" element={<PurchaseCompleted />} />
             <Route path="/auth/login" element={<Login />}></Route>
             <Route path="/auth/join" element={<Join />}></Route>
             <Route path="/userinfo" element={<Userinfo />}></Route>
             <Route path="/user/order" element={<UserOrder />}></Route>
             <Route path="/user/:id" element={<Userinfo />}></Route>
+            <Route path="/user" element={<MyPage />}></Route>
+            <Route path="/user/settings" element={<Userinfo />}></Route>
           </Route>
         </Routes>
       </Router>
@@ -59,22 +61,16 @@ function App() {
         <Router>
           <Routes>
             <Route element={<AdminLayout />}>
+              <Route path="/category" element={<Category />}></Route>
               <Route
-                path="/admin/category"
-                element={<CategoryManagement />}
+                path="/manageproducts"
+                element={<ManageProducts />}
               ></Route>
+              <Route path="/addproduct" element={<AddProduct />}></Route>
+              <Route path="/manageorder" element={<ManageOrder />}></Route>
+              <Route path="/manageuser" element={<ManageUser />}></Route>
               <Route
-                path="/admin/manageproducts"
-                element={<ProductManagement />}
-              ></Route>
-              <Route path="/admin/addproduct" element={<AddProduct />}></Route>
-              <Route
-                path="/admin/ordermanagement"
-                element={<OrderManagement />}
-              ></Route>
-              <Route path="/admin/user" element={<User />}></Route>
-              <Route
-                path="/admin/productedit"
+                path="/productedit/:product_id"
                 element={<ManageProductEdit />}
               ></Route>
             </Route>

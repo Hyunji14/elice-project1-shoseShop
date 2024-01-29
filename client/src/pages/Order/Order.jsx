@@ -1,11 +1,11 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
-import Title from '../../components/common/Title/Title';
-import PurchasePrice from '../../components/Cart/PurchasePrice/PurchasePrice';
-import Button from '../../components/common/Button/Button';
-import Modal from '../../components/common/Modal/Modal';
-import Address from '../../components/common/Address/Address';
+import Title from '../../components/Title/Title';
+import Button from '../../components/Button/Button';
+import Modal from '../../components/Modal/Modal';
+import Address from '../../components/Address/Address';
+import PurchasePrice from '../../components/PurchasePrice/PurchasePrice';
 import * as S from './Order.styles';
 
 function Order() {
@@ -26,6 +26,13 @@ function Order() {
         <Title text="주문하기" />
         <S.Wrap>
           <S.LeftContainer>
+            <S.Wrap>
+              <h3>배송지 정보</h3>
+              <label htmlFor="mypageAddress">
+                내 정보 불러오기
+                <input type="checkbox" id="mypageAddress" />
+              </label>
+            </S.Wrap>
             <hr />
             <Address />
           </S.LeftContainer>

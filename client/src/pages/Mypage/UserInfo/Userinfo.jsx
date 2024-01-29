@@ -3,10 +3,10 @@ import { useNavigate } from 'react-router-dom';
 
 import { getCookie, removeCookie } from '../../../utils/cookieUtils';
 import { getUser, updateUserInfo, withDrawUser } from './userInfoAPI';
-import Title from '../../../components/common/Title/Title';
-import Input from '../../../components/common/Input/Input';
-import Button from '../../../components/common/Button/Button';
-import Address from '../../../components/common/Address/Address';
+import Title from '../../../components/Title/Title';
+import Input from '../../../components/Input/Input';
+import Button from '../../../components/Button/Button';
+import Address from '../../../components/Address/Address';
 import * as S from './UserInfo.styles';
 
 function Userinfo() {

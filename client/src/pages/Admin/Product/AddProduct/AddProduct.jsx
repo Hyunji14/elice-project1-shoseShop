@@ -1,14 +1,15 @@
 import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useLocation } from 'react-router';
+
 import { addProduct } from '../../../../api/productsAPI';
 import { getBigCategory, getChildCategory } from '../../Category/CategoryAPI';
-import Title from '../../../../components/common/Title/Title';
-import Input from '../../../../components/common/Input/Input';
-import Button from '../../../../components/common/Button/Button';
+import Title from '../../../../components/Title/Title';
+import Input from '../../../../components/Input/Input';
+import Button from '../../../../components/Button/Button';
+import SelectOption from '../../../../components/Select/Select';
+import ImageUpload from '../../ImageUpload/ImageUpload';
 import * as S from './AddProduct.styles';
-import SelectOption from '../../../../components/common/Select/Select';
-import ImageUpload from '../../../../components/Admin/ImageUpload/ImageUpload';
 
 const genderOption = [
   { value: '모두', label: '모두' },

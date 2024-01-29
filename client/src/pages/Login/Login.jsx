@@ -1,12 +1,11 @@
-import { Link } from 'react-router-dom';
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
-import * as S from './Login.styles';
 import { PATH } from '../../global/constants';
 import { getUser } from './LoginAPI';
-import Button from '../../components/common/Button/Button';
+import Button from '../../components/Button/Button';
 import Logo from '../../image/logo.png';
+import * as S from './Login.styles';
 
 function Login() {
   const navigate = useNavigate();
