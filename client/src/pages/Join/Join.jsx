@@ -1,9 +1,9 @@
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+
+import { PATH } from '../../global/constants';
 import { postUser } from './JoinAPI';
 import * as S from './Join.styles';
-
-import { useNavigate } from 'react-router-dom';
-import { PATH } from '../../global/constants';
 
 function Join() {
   // 데이터 변수
@@ -86,37 +86,37 @@ function Join() {
       <h3>SINBA_D</h3>
       <S.JoinForm>
         <input
-          type='email'
-          placeholder='이메일 형식으로 입력해주세요.'
+          type="email"
+          placeholder="이메일 형식으로 입력해주세요."
           value={userEmail}
           onChange={(e) => setUserEmail(e.target.value)}
           required
         />
         <input
-          type='password'
-          placeholder='비밀번호는 영문자+숫자+특수문자 포함 8자 이상 입력해주세요.'
+          type="password"
+          placeholder="비밀번호는 영문자+숫자+특수문자 포함 8자 이상 입력해주세요."
           value={userFirstPassword}
           onChange={(e) => setUserFirstPassword(e.target.value)}
           required
         />
         <input
-          type='password'
-          placeholder='비밀번호를 다시 입력해주세요.'
+          type="password"
+          placeholder="비밀번호를 다시 입력해주세요."
           onChange={(e) => setUserLastPassword(e.target.value)}
           required
         />
         <input
-          type='text'
-          placeholder='이름을 입력해주세요.'
+          type="text"
+          placeholder="이름을 입력해주세요."
           value={userName}
           onChange={(e) => setUserName(e.target.value)}
           required
         />
 
         <S.SignUpButton
-          type='button'
-          className='form__input--signup-completed-button'
-          value='가입하기'
+          type="button"
+          className="form__input--signup-completed-button"
+          value="가입하기"
           onClick={joinButtonClick}
         />
       </S.JoinForm>

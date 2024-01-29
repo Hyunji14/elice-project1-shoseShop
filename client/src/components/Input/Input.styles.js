@@ -5,6 +5,10 @@ const sizes = {
     width: '360px',
     height: '30px',
   },
+  large: {
+    width: '520px',
+    height: '40px',
+  },
   medium: {
     width: '260px',
     height: '40px',

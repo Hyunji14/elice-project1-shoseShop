@@ -1,16 +1,17 @@
-import { useNavigate } from 'react-router-dom';
-import { useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
-import baseProductImgage from '../../image/base_product_image.png';
 
-import * as S from './Product.styles';
+import baseProductImage from '../../image/base_product_image.png';
+import AddProduct from './AddProduct/AddProduct';
+import SelectOption from '../../components/Select/Select';
+import Button from '../../components/Button/Button';
+import Top from '../../components/Top/Top';
+import * as S from './Products.styles';
 
 function ProductDetail() {
   const navigate = useNavigate();
   const { id } = useParams();
-
-  // 데이터 상태
   const [data, setData] = useState([]);
 
   // 데이터 get해오는 useEffect
@@ -55,47 +56,48 @@ function ProductDetail() {
   const imgSrc =
     data.main_images?.length && data.main_images?.[0]
       ? data.main_images?.[0].url
-      : baseProductImgage;
+      : baseProductImage;
 
   return (
-    <S.ProductDetailContainer>
-      {/* 상품 정보 */}
-      <S.ProductDetailContext>
-        <S.ProductImgDiv>
-          <img src={imgSrc} />
-        </S.ProductImgDiv>
-
-        <S.ProductInfoDiv>
-          <p>{data.brand}</p>
-          <p>{data.title}</p>
-          <p>{`${data.price} 원`}</p>
-
-          <S.ProductSizeSelect>
-            <option value='' disabled hidden>
-              {/* 사이즈 선택 */}
-            </option>
-            {/* 해당 데이터의 사이즈를 전부 펼쳐야함 */}
-            <option>{data.size}</option>
-          </S.ProductSizeSelect>
-
-          <form>
-            <S.ProductPurchaseButtonInput
-              onClick={() => {
-                navigate('/PurchaseCompleted');
-              }}
-              type='button'
-              value='구매하기'
+    <S.Container>
+      <Top />
+      <S.DetailInformation>
+        <S.Figure>
+          <S.Image src={imgSrc} />
+        </S.Figure>
+        <S.TextContainer>
+          <div>
+            <p>{data.brand}</p>
+            <p>{data.title}</p>
+            <p>{`${data.price} 원`}</p>
+            <SelectOption
+              options={data.size}
+              size="detailSize"
+              placeholder="사이즈를 선택해주세요."
             />
-
-            <S.ProductCartButtonInput
-              type='button'
-              value='장바구니'
-              onClick={addToCart}
-            />
-          </form>
-        </S.ProductInfoDiv>
-      </S.ProductDetailContext>
-    </S.ProductDetailContainer>
+            <AddProduct />
+            <hr />
+            <S.TotalPrice>
+              <p>총 결제금액</p>
+              <p>138,000 원</p>
+            </S.TotalPrice>
+            <S.ButtonContainer>
+              <Button color="secondary" size="long" text="구매하기" />
+              <Button
+                color="gray"
+                size="mini"
+                text="장바구니"
+                clickHandler={addToCart}
+              />
+            </S.ButtonContainer>
+          </div>
+        </S.TextContainer>
+      </S.DetailInformation>
+      <S.DetailImage>
+        <p>상품정보</p>
+        <hr />
+      </S.DetailImage>
+    </S.Container>
   );
 }
 

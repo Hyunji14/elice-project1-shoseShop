@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { getUserOrderList, deleteOrder } from './UserOrderAPI';
+import { getUserOrderList, deleteOrder } from './UserOrder/UserOrderAPI';
 import { getCookie } from '../../utils/cookieUtils';
 import { Link } from 'react-router-dom';
 

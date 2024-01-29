@@ -1,6 +1,10 @@
 import styled, { css } from 'styled-components';
 
 const sizes = {
+  long: {
+    width: '360px',
+    height: '60px',
+  },
   large: {
     width: '260px',
     height: '50px',
@@ -18,8 +22,8 @@ const sizes = {
     height: '36px',
   },
   mini: {
-    width: '80px',
-    height: '50px',
+    width: '120px',
+    height: '60px',
   },
 };
 
@@ -54,7 +58,7 @@ const colorStyle = css`
     ${color === 'gray' &&
     css`
       color: ${theme.color.darkgray};
-      pointer-events: none;
+      /* pointer-events: none; */
     `}
     ${color === 'kakao' &&
     css`
@@ -63,6 +67,17 @@ const colorStyle = css`
   `};
 
   ${({ color }) => color !== 'gray' && hoverStyle};
+`;
+
+export const Bold = styled.span`
+  font-weight: 800;
+  margin-left: 4px;
+`;
+
+export const KakaoIcon = styled.div`
+  padding-top: 10px;
+  display: inline;
+  bottom: -10px;
 `;
 
 export const ButtonStyle = styled.button`

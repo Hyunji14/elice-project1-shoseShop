@@ -1,10 +1,11 @@
-import { Link } from 'react-router-dom';
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
-import * as S from './Login.styles';
 import { PATH } from '../../global/constants';
 import { getUser } from './LoginAPI';
+import Button from '../../components/Button/Button';
+import Logo from '../../image/logo.png';
+import * as S from './Login.styles';
 
 function Login() {
   const navigate = useNavigate();
@@ -49,27 +50,12 @@ function Login() {
 
   return (
     <S.Container>
-      <h3>SINBA_D</h3>
-      <S.LoginForm>
-        <input
-          type='email'
-          placeholder='이메일'
-          required
-          onChange={(e) => setUserId(e.target.value)}
-        />
-        <input
-          type='password'
-          placeholder='비밀번호'
-          required
-          onChange={(e) => setUserPassword(e.target.value)}
-        />
-
-        <S.LoginButton type='button' value='로그인' onClick={signIn} />
-
-        <Link to={PATH.join}>
-          <S.SignUpButton>회원가입</S.SignUpButton>
-        </Link>
-      </S.LoginForm>
+      <h3>
+        <img src={Logo} alt="SINBA_D" />
+      </h3>
+      <div>
+        <Button color="kakao" size="long" text="카카오톡으로 로그인" />
+      </div>
     </S.Container>
   );
 }
