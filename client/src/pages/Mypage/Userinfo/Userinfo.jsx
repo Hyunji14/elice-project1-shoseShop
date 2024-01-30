@@ -7,7 +7,7 @@ import Title from '../../../components/Title/Title';
 import Input from '../../../components/Input/Input';
 import Button from '../../../components/Button/Button';
 import Address from '../../../components/Address/Address';
-import * as S from './Userinfo.styles';
+import * as S from './UserInfo.styles';
 
 function Userinfo() {
   const navigate = useNavigate();
