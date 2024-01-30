@@ -23,14 +23,14 @@ function Order() {
   return (
     <>
       <S.Container>
-        <Title text="주문하기" />
+        <Title text='주문하기' />
         <S.Wrap>
           <S.LeftContainer>
             <S.Wrap>
               <h3>배송지 정보</h3>
-              <label htmlFor="mypageAddress">
+              <label htmlFor='mypageAddress'>
                 내 정보 불러오기
-                <input type="checkbox" id="mypageAddress" />
+                <input type='checkbox' id='mypageAddress' />
               </label>
             </S.Wrap>
             <hr />
@@ -39,15 +39,15 @@ function Order() {
           <S.RightContainer>
             <PurchasePrice />
             <Button
-              size="large"
-              text="구매하기"
-              color="primary"
+              size='large'
+              text='구매하기'
+              color='primary'
               clickHandler={onClickPurchaseButton}
             />
             <Button
-              size="large"
-              text="취소하기"
-              color="white"
+              size='large'
+              text='취소하기'
+              color='white'
               clickHandler={onClickCancelButton}
             />
           </S.RightContainer>
@@ -57,7 +57,7 @@ function Order() {
         <Modal
           isModal={isModal}
           setIsModal={setIsModal}
-          text="주문이 완료되었습니다."
+          text='주문이 완료되었습니다.'
         />
       ) : null}
     </>

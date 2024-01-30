@@ -60,9 +60,9 @@ export default function Header() {
   return (
     <S.Container>
       <S.Wrap>
-        <Link to="/">
+        <Link to='/'>
           <S.Logo>
-            <img src={logoImage} alt="Sinbad logo" />
+            <img src={logoImage} alt='Sinbad logo' />
           </S.Logo>
         </Link>
 
@@ -74,18 +74,18 @@ export default function Header() {
 
         <S.Icon>
           <S.Search>
-            <S.Input placeholder="상품을 검색해보세요." />
+            <S.Input placeholder='상품을 검색해보세요.' />
             <button>
-              <IoSearchOutline size="18px" />
+              <IoSearchOutline size='18px' />
             </button>
           </S.Search>
 
           <button onClick={() => navigate('/auth/login')}>
-            <IoPersonOutline size="18px" />
+            <IoPersonOutline size='18px' />
           </button>
 
           <button onClick={() => navigate('/cart')}>
-            <IoBagOutline size="18px" />
+            <IoBagOutline size='18px' />
           </button>
         </S.Icon>
       </S.Wrap>

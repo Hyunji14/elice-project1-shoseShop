@@ -1,3 +1,4 @@
+<<<<<<< HEAD:client/src/pages/Cart/Cart.jsx
 import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 
@@ -9,6 +10,15 @@ import PurchasePrice from '../../components/PurchasePrice/PurchasePrice';
 import CheckBox from './Checkbox/Checkbox';
 import ProductList from './ProductList/ProductList';
 import * as S from './Cart.styles';
+=======
+import CartWrapper from './CartWrapper';
+import React, { useState, useEffect } from 'react';
+import SelectWrapper from './SelectWrapper';
+import { useNavigate } from 'react-router-dom';
+
+import { getCookie } from '../../utils/cookieUtils';
+import { newOrder } from './cartAPI';
+>>>>>>> 03b0cfe (Refact: #1 Order&Cart):client/src/pages/Order/Cart.js
 
 function Cart() {
   const navigate = useNavigate();
