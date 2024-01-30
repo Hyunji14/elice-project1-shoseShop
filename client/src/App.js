@@ -6,12 +6,11 @@ import AdminLayout from './layout/AdminLayout';
 
 // Home
 import Home from './pages/Home/Home';
-import Address from './pages/MyPage/Adress';
-import Order from './pages/Order/Order';
 
 // Products
 import ProductPage from './pages/Products/ProductPage';
 import ProductDetail from './pages/Products/ProductDetail';
+import Order from './pages/Order/Order';
 
 // User
 import Login from './pages/Login/Login';
